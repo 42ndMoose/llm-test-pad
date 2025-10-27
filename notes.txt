@@ -2,3 +2,4 @@
 - Edit this file in GitHub → Commit changes → it will show up on /notes.html after a minute.
 - This is plain text; feel free to replace everything below.
 - Example entry: Oct 27, 2025 — First persistent note works!
+Moose: hi! okay, can you see this? and btw, is this how web devs actually edit stuff in their websites? by going into their repo and editing > comitting changes?
