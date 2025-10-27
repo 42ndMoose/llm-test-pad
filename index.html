@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM Test Pad — 0001</title>
+  <link rel="canonical" href="./">
+  <link rel="alternate" href="?view=plain" title="Plain view">
+  <meta name="published" content="2025-10-27T00:00:00Z">
+  <meta name="modified" content="2025-10-27T00:00:00Z">
+  <meta name="description" content="A minimal LLM-friendly test page for extraction and citation.">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.5; margin: 2rem; }
+    main { max-width: 800px; margin: 0 auto; }
+    #llm-answer { background: #f4f4f4; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #e2e2e2; }
+    h1 { margin-top: 0.2rem; }
+    hr { margin: 2rem 0; }
+    .muted { color: #666; font-size: 0.9rem; }
+    .tick { font-feature-settings: "tnum"; }
+  </style>
+  <script type="application/ld+json" id="llm-contract">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LLM Test Pad \u2014 0001",
+  "datePublished": "2025-10-27T00:00:00Z",
+  "dateModified": "2025-10-27T00:00:00Z",
+  "articleBodySelector": "#article-body",
+  "articleEndSelector": "#article-end",
+  "plainView": "?view=plain",
+  "jsonFeed": "llm.json",
+  "engagement": {
+    "likesSelector": "#likes",
+    "dislikesSelector": "#dislikes"
+  },
+  "commentsSelector": "#comments"
+}
+  </script>
+</head>
+<body>
+<main>
+  <h1>LLM Test Pad — 0001</h1>
+
+  <section id="llm-answer" aria-label="LLM Answer">
+    <p><strong>Answer:</strong> This is a public LLM test page. Updated <time class="tick">Oct 27, 2025</time>. See <a href="#article-body">article</a> and <a href="#article-end">end marker</a>.</p>
+  </section>
+
+  <!-- LLM:ARTICLE_START -->
+  <article id="article-body" itemscope itemtype="https://schema.org/Article">
+    <p class="muted"><strong>Published:</strong> Oct 27, 2025 · <strong>Updated:</strong> Oct 27, 2025</p>
+
+    <h2 id="what-is-this">What is this?</h2>
+    <p itemprop="articleBody">A minimal, server-rendered page designed so LLM browsers can extract title, summary, body, timestamps, and the explicit end of article.</p>
+
+    <h2 id="anchors">Anchors</h2>
+    <ul>
+      <li><a href="#what-is-this">#what-is-this</a></li>
+      <li><a href="#article-end">#article-end</a></li>
+    </ul>
+  </article>
+  <!-- LLM:ARTICLE_END -->
+
+  <hr id="article-end" aria-label="Article ends here">
+
+  <section id="engagement" aria-label="Engagement">
+    <p id="reaction-summary">Likes: <span id="likes">0</span> · Dislikes: <span id="dislikes">0</span></p>
+  </section>
+
+  <section id="comments" aria-label="Comments">
+    <h2>Comments</h2>
+    <ol>
+      <li id="c1" data-score="1"><header>Tester · 1 point</header><p>Hello world.</p></li>
+    </ol>
+  </section>
+
+  <footer class="muted">
+    <p>© 2025 Your Name — LLM test page</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "id": "0001",
+  "url": "./",
+  "title": "LLM Test Pad \u2014 0001",
+  "dek": "A minimal LLM-friendly test page for extraction and citation.",
+  "published_at": "2025-10-27T00:00:00Z",
+  "updated_at": "2025-10-27T00:00:00Z",
+  "authors": [
+    "Your Name"
+  ],
+  "tags": [
+    "llm",
+    "test"
+  ],
+  "body_markdown": "## What is this?\nA minimal, server-rendered page designed so LLM browsers can extract title, summary, body, timestamps, and the explicit end of article.\n\n## Anchors\n- #what-is-this\n- #article-end\n"
+}
