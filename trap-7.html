@@ -16,6 +16,14 @@
   gtag('config', 'G-11BE7HTQM9', { 'debug_mode': true });
 </script>
 
+<script>
+  // Force GA4 DebugView + send explicit events
+  gtag('config', 'G-11BE7HTQM9', { 'debug_mode': true });
+  gtag('event', 'test_ping', {
+    page_location: location.href,
+    page_title: document.title
+  });
+</script>
   
 </head>
 <body>
