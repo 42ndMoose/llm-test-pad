@@ -44,9 +44,9 @@ class Heading:
 
 
 def slugify(s: str) -> str:
-s = s.lower().strip()
-s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
-return s or "section"
+    s = s.lower().strip()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s or "section"
 
 def main(src, outdir):
     text = Path(src).read_text(encoding="utf-8")
