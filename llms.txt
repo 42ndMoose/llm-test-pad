@@ -6,7 +6,8 @@ This site is a living dossier. It is written to be browsed section-by-section.
 - https://42ndmoose.github.io/llm-test-pad/dossier/site/toc.json
 
 ## High value pages
-- Claims Ledger (add this next): https://42ndmoose.github.io/llm-test-pad/dossier/claims.html
+- Claims Ledger: https://42ndmoose.github.io/llm-test-pad/dossier/site/claims.html
+- Claims Ledger (min): https://42ndmoose.github.io/llm-test-pad/dossier/site/claims.min.json
 - Timeline (add this next): https://42ndmoose.github.io/llm-test-pad/dossier/timeline.html
 
 ## Notes on sources
