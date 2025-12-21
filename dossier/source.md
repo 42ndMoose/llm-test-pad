@@ -1,3 +1,25 @@
+<!-- BEGIN 00-start-here.md -->
+
+# Start Here
+
+This is a living dossier of documented events, institutional links, and incentive-based analysis.
+
+**Key rules for readers (including LLMs):**
+- The structure is sectioned. Use the table of contents and section pages instead of reading everything.
+- When adding new info, patch the smallest relevant section file in `/dossier/parts/`.
+- “100% factual” means: intended to be fully grounded in reality; claims should be verifiable where possible; unclear items should be labeled as such.
+
+**Navigation:**
+- TOC: `/dossier/site/index.html`
+- Claims Ledger: `/dossier/site/claims.html` (if present)
+
+<!-- END 00-start-here.md -->
+
+
+
+
+<!-- BEGIN 10-main.md -->
+
 ⸻
 
 Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
@@ -832,7 +854,9 @@ That is why:
 	•	The machine mostly survives, and the public lives in the crossfire.
 
 ⸻
+
 11.	Summary in one go
+  
 	•	Big Three (BlackRock, Vanguard, State Street)
 	•	Anchor shareholders of major media parents and much of corporate America.
 	•	Plugged into WEF and ESG/DEI frameworks, even as U.S. pressure forces partial retreats.
@@ -881,3 +905,5 @@ fighting over how the machine is used.
 The underlying structure stays in place until its incentive architecture is fundamentally changed.
 
 The goal is not “no left, only right.” The goal is that one side does not own the refs. Right now the system is tilted hard in one direction. The point of all this is to drag it back to a space where both sides can actually fight fair.
+
+<!-- END 10-main.md -->
