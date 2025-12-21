@@ -14,7 +14,11 @@ from html import escape
 # This regex will also match list items like "  1. Something"
 # So we add a heuristic: single-number headings (level 1) must be "promoted"
 # by having a divider line (⸻ or --- etc.) right above them.
-NUM_HEADING_RE = re.compile(r"^\s*(\d+(?:\.\d+)*)\.\s+(.+?)\s*$")
+# ONLY top-level numeric headings:
+#   0. Title
+#   10. Title
+# (No 0.1, no 8.8.6)
+NUM_HEADING_RE = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
 
 # Also support Markdown headings if you ever add them:
 MD_HEADING_RE = re.compile(r"^\s*(#{1,6})\s+(.+?)\s*$")
@@ -81,7 +85,10 @@ def detect_headings(lines: list[str]) -> list[Heading]:
         if m:
             hashes, title = m.group(1), m.group(2)
             level = len(hashes)
-            heads.append(Heading(kind="md", number="", level=level, title=title, line_index=i))
+
+            # Only split pages on H1 headings (# ...)
+            if level == 1:
+                heads.append(Heading(kind="md", number="", level=level, title=title, line_index=i))
             continue
 
     return heads
