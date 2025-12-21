@@ -33,7 +33,8 @@ def slugify(s: str) -> str:
 def file_name(h: Heading) -> str:
     if h.kind == "num":
         # Stable names: 8-8-6-delegitimization.html
-        num = h.number.replace(".", "-")
+        parts = h.number.split(".")
+        num = "-".join(p.zfill(2) for p in parts)  # 8.8.6 -> 08-08-06
         return f"{num}-{slugify(h.title)}.html"
     # For markdown headings
     return f"{slugify(h.title)}.html"
