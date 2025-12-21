@@ -1,3 +1,18 @@
+---
+id: start-here
+order: "000000"
+level: 1
+title: Start Here
+keywords:
+  - navigation
+  - toc
+  - how to use
+summary:
+  - Landing page for humans and LLMs.
+  - Explains how to navigate and how to interpret sections.
+related: []
+---
+
 # Start Here
 
 This is a living dossier of documented events, institutional links, and incentive-based analysis.
