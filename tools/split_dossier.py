@@ -1,30 +1,70 @@
-# tools/build_source.py
-from __future__ import annotations
-
+import os, re, sys
 from pathlib import Path
+from html import escape
 
-ROOT = Path(__file__).resolve().parents[1]
-PARTS_DIR = ROOT / "dossier" / "parts"
-OUT_FILE = ROOT / "dossier" / "source.md"
+TEMPLATE = """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{title}</title>
+</head>
+<body>
+  <nav><a href="./index.html">Index</a></nav>
+  <main>
+    <h1>{title}</h1>
+    <pre style="white-space:pre-wrap;line-height:1.35">{body}</pre>
+  </main>
+  <hr/>
+  <footer>© 2025</footer>
+</body>
+</html>
+"""
 
-def main() -> None:
-    PARTS_DIR.mkdir(parents=True, exist_ok=True)
+def slugify(s: str) -> str:
+    s = s.lower().strip()
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s or "section"
 
-    part_files = sorted([p for p in PARTS_DIR.glob("*.md") if p.is_file()])
-    if not part_files:
-        raise SystemExit(f"No parts found in {PARTS_DIR}. Add at least one .md file.")
+def main(src, outdir):
+    text = Path(src).read_text(encoding="utf-8")
+    # split on H1 headings only
+    parts = re.split(r"(?m)^(# .+)\n", text)
+    # parts looks like: [preamble, "# title", body, "# title2", body2, ...]
+    out = Path(outdir)
+    out.mkdir(parents=True, exist_ok=True)
 
-    chunks: list[str] = []
-    for p in part_files:
-        text = p.read_text(encoding="utf-8").strip()
-        if not text:
-            continue
-        header = f"\n\n<!-- BEGIN {p.name} -->\n\n"
-        footer = f"\n\n<!-- END {p.name} -->\n\n"
-        chunks.append(header + text + footer)
+    pages = []
+    i = 1
+    while i < len(parts):
+        title_line = parts[i].strip()
+        title = title_line[2:].strip()
+        body = parts[i+1]
+        filename = f"{slugify(title)}.html"
+        (out / filename).write_text(
+            TEMPLATE.format(title=escape(title), body=escape(body)),
+            encoding="utf-8"
+        )
+        pages.append((title, filename))
+        i += 2
 
-    OUT_FILE.write_text("\n".join(chunks).strip() + "\n", encoding="utf-8")
-    print(f"Wrote {OUT_FILE} from {len(part_files)} part(s).")
+    # index
+    links = "\n".join([f'<li><a href="./{fn}">{escape(t)}</a></li>' for t, fn in pages])
+    index_html = f"""<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dossier Index</title></head>
+<body>
+<main>
+<h1>Dossier Index</h1>
+<p><strong>Start here:</strong> read sections as needed. Use the Claims Ledger for fast verification.</p>
+<ol>{links}</ol>
+</main>
+</body></html>"""
+    (out / "index.html").write_text(index_html, encoding="utf-8")
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) != 3:
+        print("Usage: python split_dossier.py <source.md> <output_dir>")
+        sys.exit(1)
+    main(sys.argv[1], sys.argv[2])
