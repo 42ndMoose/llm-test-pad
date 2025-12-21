@@ -1,36 +1,33 @@
 ---
-number: 2
+id: sec-02-ownership-layer
+order: "000200"
+number: "2"
+level: 1
 title: Ownership layer: Big Three and legacy media
 keywords:
   - Big Three
   - BlackRock
   - Vanguard
   - State Street
+  - institutional ownership
   - index funds
-  - institutional shareholders
-  - common stock
-  - dual-class shares
-  - Murdoch
-  - Fox Corporation
-  - News Corp
   - Comcast
   - NBC
   - MSNBC
   - CNBC
   - Disney
-  - ABC News
+  - ABC
   - ESPN
   - Warner Bros. Discovery
-  - WBD
   - CNN
-  - Sinclair Broadcast Group
-  - local TV
-  - S&P 500
-  - cap table
-  - stewardship voting
+  - Fox Corporation
+  - Sinclair
+  - dual-class shares
 summary:
-  - Explains how BlackRock, Vanguard, and State Street sit near the top of institutional ownership across major U.S. public companies and legacy media parents.
-  - Breaks down media conglomerate parent companies (Comcast, Disney, WBD, Fox, Sinclair) and clarifies what “ownership influence” does and doesn’t mean.
+  - Shows how the Big Three appear as major institutional holders across media parent companies.
+  - Clarifies the difference between ownership influence and day-to-day editorial control.
+related:
+  - start-here
 ---
 
 2.	Ownership layer: Big Three and legacy media
