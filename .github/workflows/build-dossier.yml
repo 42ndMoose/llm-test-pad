@@ -6,6 +6,7 @@ on:
       - "dossier/parts/**"
       - "tools/**"
       - ".github/workflows/build-dossier.yml"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,6 +24,11 @@ jobs:
       - name: Build dossier source.md from parts
         run: |
           python tools/build_source.py
+
+      - name: Clean output folder
+        run: |
+          rm -rf dossier/site/*
+          mkdir -p dossier/site
 
       - name: Split dossier into pages
         run: |
