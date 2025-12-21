@@ -119,7 +119,9 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
         links_html = ""
         links = c.get("links", [])
         if links:
-            links_html = " ".join([f'<a href="{escape(u)}" rel="noreferrer noopener">{escape(u)}</a>' for u in links])
+            links_html = " ".join(
+                [f'<a href="{escape(u)}" rel="noreferrer noopener">{escape(u)}</a>' for u in links]
+            )
 
         rows.append(
             "<tr>"
@@ -130,7 +132,6 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
             "</tr>"
         )
 
-    body = ""
     if rows:
         body = (
             "<table border='1' cellspacing='0' cellpadding='6' style='border-collapse:collapse;width:100%'>"
@@ -142,7 +143,10 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
             "</tbody></table>"
         )
     else:
-        body = "<p>No claims found yet. Add lines like <code>[CLAIM] ...</code> or <code>CLAIM: ...</code> to your dossier.</p>"
+        body = (
+            "<p>No claims found yet. Add lines like <code>[CLAIM] ...</code> or "
+            "<code>CLAIM: ...</code> to your dossier.</p>"
+        )
 
     return f"""<!doctype html>
 <html lang="en">
@@ -156,7 +160,10 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
   <main>
     <h1>Claims Ledger</h1>
     <p>This page lists atomic claims marked in the source with <code>[CLAIM]</code> or <code>CLAIM:</code>.</p>
-    <p><a href="./claims.json">claims.json</a></p>
+    <ul>
+      <li><a href="./claims.json">claims.json</a> (full)</li>
+      <li><a href="./claims.min.json">claims.min.json</a> (lightweight)</li>
+    </ul>
     {body}
   </main>
 </body>
@@ -189,7 +196,6 @@ def main(src: str, outdir: str) -> None:
 
         h = find_current_heading(heads, i)
         if h is None:
-            # No heading found above this line
             section_key = "no-heading"
             section_label = "No heading"
             url = ""
@@ -217,11 +223,23 @@ def main(src: str, outdir: str) -> None:
             "links": links,
         })
 
+    claims_min = [
+        {
+            "id": c["id"],
+            "section_label": c.get("section_label", ""),
+            "url": c.get("url", ""),
+            "line": c.get("line", None),
+        }
+        for c in claims
+    ]
+
     # Write JSON + HTML
     (out / "claims.json").write_text(json.dumps(claims, indent=2), encoding="utf-8")
+    (out / "claims.min.json").write_text(json.dumps(claims_min, indent=2), encoding="utf-8")
     (out / "claims.html").write_text(render_claims_html(doc_title, claims), encoding="utf-8")
 
     print(f"Wrote {out / 'claims.json'} ({len(claims)} claims)")
+    print(f"Wrote {out / 'claims.min.json'} ({len(claims_min)} claims)")
     print(f"Wrote {out / 'claims.html'}")
 
 
