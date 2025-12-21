@@ -9,10 +9,18 @@ from html import escape
 #   0. Title
 #   0.1 Subtitle
 #   8.8.6 Deeper subtitle
+#
+# IMPORTANT:
+# This regex will also match list items like "  1. Something"
+# So we add a heuristic: single-number headings (level 1) must be "promoted"
+# by having a divider line (⸻ or --- etc.) right above them.
 NUM_HEADING_RE = re.compile(r"^\s*(\d+(?:\.\d+)*)\.\s+(.+?)\s*$")
 
 # Also support Markdown headings if you ever add them:
 MD_HEADING_RE = re.compile(r"^\s*(#{1,6})\s+(.+?)\s*$")
+
+# Divider lines that "promote" the next single-number heading into a real section
+DIVIDER_RE = re.compile(r"^\s*(?:⸻+|[-_]{3,}|={3,})\s*$")
 
 
 @dataclass
@@ -32,12 +40,21 @@ def slugify(s: str) -> str:
 
 def file_name(h: Heading) -> str:
     if h.kind == "num":
-        # Stable names: 8-8-6-delegitimization.html
+        # Stable names: 8.8.6 -> 08-08-06-delegitimization.html
         parts = h.number.split(".")
-        num = "-".join(p.zfill(2) for p in parts)  # 8.8.6 -> 08-08-06
+        num = "-".join(p.zfill(2) for p in parts)
         return f"{num}-{slugify(h.title)}.html"
     # For markdown headings
     return f"{slugify(h.title)}.html"
+
+
+def prev_nonempty_line(lines: list[str], i: int) -> str:
+    """Return the previous non-empty line (stripped), or empty string."""
+    for j in range(i - 1, -1, -1):
+        s = lines[j].strip()
+        if s:
+            return s
+    return ""
 
 
 def detect_headings(lines: list[str]) -> list[Heading]:
@@ -47,6 +64,16 @@ def detect_headings(lines: list[str]) -> list[Heading]:
         if m:
             number, title = m.group(1), m.group(2)
             level = number.count(".") + 1
+
+            # Heuristic:
+            # - Level 1 "N. Title" headings are only real headings if
+            #   the previous non-empty line is a divider.
+            # - Dotted headings (0.1, 8.5.3, etc.) are allowed anywhere.
+            if level == 1:
+                prev = prev_nonempty_line(lines, i)
+                if not DIVIDER_RE.match(prev):
+                    continue
+
             heads.append(Heading(kind="num", number=number, level=level, title=title, line_index=i))
             continue
 
@@ -177,16 +204,17 @@ def main(src: str, outdir: str):
         (out / "full.html").write_text(page, encoding="utf-8")
         idx = render_index(doc_title, [{"level": 1, "title": "Full Document", "number": "", "url": "full.html"}])
         (out / "index.html").write_text(idx, encoding="utf-8")
-        (out / "toc.json").write_text(json.dumps([{"level": 1, "title": "Full Document", "number": "", "url": "full.html"}], indent=2), encoding="utf-8")
+        (out / "toc.json").write_text(
+            json.dumps([{"level": 1, "title": "Full Document", "number": "", "url": "full.html"}], indent=2),
+            encoding="utf-8",
+        )
         return
 
-    # Build per-heading pages, with hierarchical cutoffs
+    # Build per-heading pages
     entries: list[dict] = []
     pages: list[tuple[Heading, str]] = []
 
     for i, h in enumerate(heads):
-        end = section_end_index(heads, i, len(lines))
-        body = "\n".join(lines[h.line_index:end]).strip() + "\n"
         fn = file_name(h)
         pages.append((h, fn))
         entries.append({
