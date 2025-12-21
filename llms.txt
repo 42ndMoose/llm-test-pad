@@ -3,6 +3,7 @@ This site is a living dossier. It is written to be browsed section-by-section.
 
 ## Start here
 - https://42ndmoose.github.io/llm-test-pad/dossier/site/index.html
+- https://42ndmoose.github.io/llm-test-pad/dossier/site/toc.json
 
 ## High value pages
 - Claims Ledger (add this next): https://42ndmoose.github.io/llm-test-pad/dossier/claims.html
