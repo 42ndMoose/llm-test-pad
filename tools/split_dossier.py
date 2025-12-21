@@ -1,32 +1,30 @@
-name: Build dossier pages
+# tools/build_source.py
+from __future__ import annotations
 
-on:
-  push:
-    paths:
-      - "dossier/source.md"
-      - "tools/**"
-      - ".github/workflows/build-dossier.yml"
+from pathlib import Path
 
-permissions:
-  contents: write
+ROOT = Path(__file__).resolve().parents[1]
+PARTS_DIR = ROOT / "dossier" / "parts"
+OUT_FILE = ROOT / "dossier" / "source.md"
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+def main() -> None:
+    PARTS_DIR.mkdir(parents=True, exist_ok=True)
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+    part_files = sorted([p for p in PARTS_DIR.glob("*.md") if p.is_file()])
+    if not part_files:
+        raise SystemExit(f"No parts found in {PARTS_DIR}. Add at least one .md file.")
 
-      - name: Build
-        run: |
-          python tools/split_dossier.py dossier/source.md dossier/site
-      - name: Commit built site
-        run: |
-          git config user.name "dossier-bot"
-          git config user.email "dossier-bot@users.noreply.github.com"
-          git add dossier/site
-          git commit -m "Auto-build dossier site" || exit 0
-          git push
+    chunks: list[str] = []
+    for p in part_files:
+        text = p.read_text(encoding="utf-8").strip()
+        if not text:
+            continue
+        header = f"\n\n<!-- BEGIN {p.name} -->\n\n"
+        footer = f"\n\n<!-- END {p.name} -->\n\n"
+        chunks.append(header + text + footer)
+
+    OUT_FILE.write_text("\n".join(chunks).strip() + "\n", encoding="utf-8")
+    print(f"Wrote {OUT_FILE} from {len(part_files)} part(s).")
+
+if __name__ == "__main__":
+    main()
