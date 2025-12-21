@@ -1,6 +1,3 @@
-# tools/build_source.py
-from __future__ import annotations
-
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,14 +11,12 @@ def main() -> None:
     if not part_files:
         raise SystemExit(f"No parts found in {PARTS_DIR}. Add at least one .md file.")
 
-    chunks: list[str] = []
+    chunks = []
     for p in part_files:
         text = p.read_text(encoding="utf-8").strip()
         if not text:
             continue
-        header = f"\n\n<!-- BEGIN {p.name} -->\n\n"
-        footer = f"\n\n<!-- END {p.name} -->\n\n"
-        chunks.append(header + text + footer)
+        chunks.append(f"<!-- BEGIN {p.name} -->\n\n{text}\n\n<!-- END {p.name} -->\n")
 
     OUT_FILE.write_text("\n".join(chunks).strip() + "\n", encoding="utf-8")
     print(f"Wrote {OUT_FILE} from {len(part_files)} part(s).")
