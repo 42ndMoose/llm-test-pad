@@ -3,7 +3,8 @@
 Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
 
 ⸻
-	0.	Political context
+
+0.	Political context
 
 	•	Donald Trump is serving again as president of the United States as the 45th and 47th president, back in office since January 20, 2025.
 	•	His second term is focused heavily on:
@@ -831,8 +832,7 @@ That is why:
 	•	The machine mostly survives, and the public lives in the crossfire.
 
 ⸻
-	11.	Summary in one go
-
+11.	Summary in one go
 	•	Big Three (BlackRock, Vanguard, State Street)
 	•	Anchor shareholders of major media parents and much of corporate America.
 	•	Plugged into WEF and ESG/DEI frameworks, even as U.S. pressure forces partial retreats.
