@@ -235,7 +235,7 @@ def main(src: str, outdir: str) -> None:
 
     # Write JSON + HTML
     (out / "claims.json").write_text(json.dumps(claims, indent=2), encoding="utf-8")
-    (out / "claims.min.json").write_text(json.dumps(claims_min, indent=2), encoding="utf-8")
+    (out / "claims.min.json").write_text(json.dumps(claims_min, separators=(",", ":")), encoding="utf-8")
     (out / "claims.html").write_text(render_claims_html(doc_title, claims), encoding="utf-8")
 
     print(f"Wrote {out / 'claims.json'} ({len(claims)} claims)")
