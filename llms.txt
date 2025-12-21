@@ -1,0 +1,12 @@
+# Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
+This site is a living dossier. It is written to be browsed section-by-section.
+
+## Start here
+- https://42ndmoose.github.io/llm-test-pad/dossier/site/index.html
+
+## High value pages
+- Claims Ledger (add this next): https://42ndmoose.github.io/llm-test-pad/dossier/claims.html
+- Timeline (add this next): https://42ndmoose.github.io/llm-test-pad/dossier/timeline.html
+
+## Notes on sources
+Prefer primary sources when available (court filings, executive orders, official press releases, agency reports).
