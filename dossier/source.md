@@ -18,6 +18,74 @@ This is a living dossier of documented events, institutional links, and incentiv
 
 
 
+<!-- BEGIN 01-political-context.md -->
+
+---
+number: 0
+title: Political context
+keywords: [Trump 2.0, DEI rollback, ESG, net zero, tariffs, trade leverage, censorship network, disinformation, DOJ antitrust, Big Three]
+summary:
+  - Sets the political frame for Trump’s second term and the main institutional battlegrounds.
+  - Explains why mainstream “neutral” platforms tend to tilt toward legacy-media consensus.
+  - Defines a three-pillar model: narrative control, the money spigot, and mass immigration.
+---
+
+0.	Political context
+
+	•	Donald Trump is serving again as president of the United States as the 45th and 47th president, back in office since January 20, 2025.
+	•	His second term is focused heavily on:
+	•	Rolling back DEI inside the federal state and its contractor ecosystem (Executive Order 14151, Ending Radical and Wasteful Government DEI Programs and Preferencing, plus follow-on orders).
+	•	Hitting ESG and climate-linked finance alliances (big U.S. managers pulling out of Net Zero Asset Managers and Climate Action 100+ under legal and political heat).
+	•	Supercharging fossil fuels (national “energy emergency” framing and orders to accelerate approvals for fossil projects).
+	•	Using tariffs as leverage to rewire trade and supply chains (new Trump tariffs and threats on Canada, Mexico, China, EU, framed explicitly as a negotiation tool).
+	•	Pushing back against the post-2016 “mis/disinformation” and censorship network (DOJ antitrust statement of interest against viewpoint collusion, House “censorship-industrial complex” reports, attacks on fact-check cartels).
+
+The rest of this doc is about who actually holds power, how that power is structured, and what Trump is realistically doing inside that structure.
+
+0.1 On sources, platforms, and bias
+
+Before walking into the weeds, it matters where information comes from.
+
+Wikipedia
+	•	Formally aims for neutrality, but on hot topics (Covid, Trump, populism, “misinformation,” ESG, gender, etc.) editorial disputes and admin power tend to push toward legacy-media consensus. The source lists on those pages are usually heavy with the same large outlets and NGOs we are talking about later.
+	•	You can still use it for dates, names, and basic scaffolding. Treat it as a map of consensus plus bias, not a final authority.
+
+Reddit (big subs) and Twitch
+	•	Large subs and Twitch communities are shaped by:
+	•	Platform policies (“hate,” “misinfo,” “harassment,” etc.).
+	•	Mod teams who know what those policies are and what gets them in trouble.
+	•	Users who push against dominant narratives on elections, vaccines, gender, immigration, etc. are more likely to be:
+	•	Banned outright,
+	•	Stealth-suppressed via rules about “harm,” “hate,” or “misinfo,”
+	•	Dogpiled while mods quietly lean one way.
+
+This does not need a giant conspiracy. You have a rule-set written in the same ideological language as NGOs, universities, and brand-safety frameworks. That tilts the Overton window by default.
+
+So: Wikipedia, big subreddits, and Twitch are not neutral ground. They sit inside the same “safety / misinfo / ESG / DEI” ecosystem, and anything taken from them needs to be filtered with that in mind.
+
+0.2 Three main pillars of the agenda
+
+Underneath all the noise, the same incentive architecture runs three main agendas at the same time. This is a structural model inferred from how institutions behave, not a single written “master plan.”
+	1.	Political censorship and narrative control
+	•	The censorship / compliance stack: regulators, public broadcasters, NGOs, “disinfo” labs, fact-check cartels, TNI-style consortia, and brand-safety frameworks that punish deviation from approved narratives, especially on elections, Covid, gender, climate, and borders.
+	2.	Foreign-aid and welfare spigot, plus bureaucratic bloat
+	•	Trillions flow through programs and grants with huge surface area for waste, fraud, and patronage.
+	•	Foreign aid is always sold as “only one percent of the budget,” but it still routes tens of billions through NGOs, multilaterals, and contractors.
+	•	Domestic programs throw off hundreds of billions in “improper payments” and fraud every year. Oversight work puts reported improper payments at roughly 236 billion dollars in FY 2023 alone, and around 2.7 trillion dollars over the past two decades across programs like Medicare, Medicaid, unemployment insurance, SNAP and Covid-era relief. These are reported improper payments (a mix of fraud, abuse, ineligibility and admin error), but even if only a slice of that is outright fraud and patronage, the absolute number is huge.
+	•	DOGE (Department of Government Efficiency), seeded with Elon Musk in a leading design and launch role, is explicitly aimed at cutting this spigot and is treated as an existential threat for that reason, even as Musk later shifted his primary focus back to his own companies and DOGE’s day-to-day work moved to other America First figures and career auditors.
+	3.	Mass immigration, demographic engineering, and client-base lock-in
+	•	Loosen borders, stretch asylum, and normalize large inflows, then layer amnesty and regularization on top.
+	•	Build welfare and NGO ecosystems around newcomers, so entire sectors depend on permanent inflows and subsidies.
+	•	Use speech laws, “hate” rules, and platform policing to contain backlash.
+	•	In practice, the agenda only really cares about flows that are big and sustained enough to show up in census numbers and downstream electoral math. If migration is too small to move those numbers, it is background noise. This is about political incentives, not mind-reading any one leader.
+
+The later sections track how Trump 2.0 and DOGE are hitting each pillar, and how the opposing bloc uses the same machine to resist.
+
+<!-- END 01-political-context.md -->
+
+
+
+
 <!-- BEGIN 10-main.md -->
 
 ⸻
