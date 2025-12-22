@@ -1,5 +1,31 @@
 [
   {
+    "id": "00-political-context",
+    "order": "000000",
+    "number": "0",
+    "level": 1,
+    "title": "Political context",
+    "keywords": [
+      "\"Trump 2.0\"",
+      "\"DEI rollback\"",
+      "\"ESG\"",
+      "\"net zero\"",
+      "\"tariffs\"",
+      "\"trade leverage\"",
+      "\"censorship network\"",
+      "\"disinformation\"",
+      "\"DOJ antitrust\"",
+      "\"Big Three\""
+    ],
+    "summary": [
+      "\"Sets the political frame for Trump’s second term and the main institutional battlegrounds.\"",
+      "\"Explains why mainstream “neutral” platforms tend to tilt toward legacy-media consensus.\"",
+      "\"Defines a three-pillar model: narrative control, the money spigot, and mass immigration.\""
+    ],
+    "related": "[]",
+    "url": "00-political-context.html"
+  },
+  {
     "id": "00-start-here",
     "order": "000000",
     "number": "",
@@ -85,32 +111,6 @@
       "start-here"
     ],
     "url": "sec-02-ownership-layer.html"
-  },
-  {
-    "id": "00",
-    "order": "999999",
-    "number": "0",
-    "level": 1,
-    "title": "Political context",
-    "keywords": [
-      "Trump 2.0",
-      "DEI rollback",
-      "ESG",
-      "net zero",
-      "tariffs",
-      "trade leverage",
-      "censorship network",
-      "disinformation",
-      "DOJ antitrust",
-      "Big Three"
-    ],
-    "summary": [
-      "Sets the political frame for Trump’s second term and the main institutional battlegrounds.",
-      "Explains why mainstream “neutral” platforms tend to tilt toward legacy-media consensus.",
-      "Defines a three-pillar model: narrative control, the money spigot, and mass immigration."
-    ],
-    "related": [],
-    "url": "00.html"
   },
   {
     "id": "10-main",
