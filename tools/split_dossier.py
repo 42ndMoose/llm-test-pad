@@ -1,13 +1,16 @@
+# tools/split_dossier.py
+from __future__ import annotations
+
+import json
 import re
 import sys
-import json
 from dataclasses import dataclass
-from pathlib import Path
 from html import escape
+from pathlib import Path
 
 
 # -----------------------------
-# Old mode: heading splitting
+# Single-file heading splitting
 # -----------------------------
 NUM_HEADING_RE = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
 MD_HEADING_RE = re.compile(r"^\s*(#{1,6})\s+(.+?)\s*$")
@@ -21,6 +24,7 @@ class Heading:
     level: int
     title: str
     line_index: int
+    cut_before: int | None = None  # if promoted by divider, previous page ends before divider
 
 
 def slugify(s: str) -> str:
@@ -37,12 +41,20 @@ def file_name_from_heading(h: Heading) -> str:
     return f"{slugify(h.title)}.html"
 
 
-def prev_nonempty_line(lines: list[str], i: int) -> str:
+def is_ignorable_line(s: str) -> bool:
+    # ignore build_source markers when looking for dividers
+    return s.startswith("<!--") and s.endswith("-->")
+
+
+def prev_significant(lines: list[str], i: int) -> tuple[int | None, str]:
     for j in range(i - 1, -1, -1):
         s = lines[j].strip()
-        if s:
-            return s
-    return ""
+        if not s:
+            continue
+        if is_ignorable_line(s):
+            continue
+        return j, s
+    return None, ""
 
 
 def detect_headings(lines: list[str]) -> list[Heading]:
@@ -51,20 +63,29 @@ def detect_headings(lines: list[str]) -> list[Heading]:
         m = NUM_HEADING_RE.match(line)
         if m:
             number, title = m.group(1), m.group(2)
-            level = 1  # only top-level in your patched logic
-            prev = prev_nonempty_line(lines, i)
-            if not DIVIDER_RE.match(prev):
-                continue
-            heads.append(Heading(kind="num", number=number, level=level, title=title, line_index=i))
+            level = 1  # you currently split only on top-level numeric headings
+
+            prev_i, prev = prev_significant(lines, i)
+
+            # Allow the very first numeric heading even if no divider above it.
+            # All subsequent numeric headings must be "promoted" by a divider line.
+            if heads:
+                if prev_i is None or not DIVIDER_RE.match(prev):
+                    continue
+
+            cut_before = prev_i if (prev_i is not None and DIVIDER_RE.match(prev)) else None
+            heads.append(Heading(kind="num", number=number, level=level, title=title, line_index=i, cut_before=cut_before))
             continue
 
         m = MD_HEADING_RE.match(line)
         if m:
             hashes, title = m.group(1), m.group(2)
             level = len(hashes)
+            # only split on H1
             if level == 1:
                 heads.append(Heading(kind="md", number="", level=level, title=title, line_index=i))
             continue
+
     return heads
 
 
@@ -73,12 +94,12 @@ def section_end_index(heads: list[Heading], idx: int, total_lines: int) -> int:
     for j in range(idx + 1, len(heads)):
         nxt = heads[j]
         if nxt.level <= cur.level:
-            return nxt.line_index
+            return nxt.cut_before if nxt.cut_before is not None else nxt.line_index
     return total_lines
 
 
 # -----------------------------
-# New mode: parts + front matter
+# Parts + YAML front matter mode
 # -----------------------------
 def parse_front_matter(text: str) -> tuple[dict, str]:
     """
@@ -102,17 +123,16 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
         return {}, text  # no closing ---
 
     fm_lines = lines[1:end_idx]
-    body = "\n".join(lines[end_idx + 1:]).lstrip("\n")
+    body = "\n".join(lines[end_idx + 1 :]).lstrip("\n")
 
     meta: dict = {}
-    cur_key = None
+    cur_key: str | None = None
 
     for raw in fm_lines:
         line = raw.rstrip()
         if not line.strip():
             continue
 
-        # list item
         m_item = re.match(r"^\s*-\s*(.+?)\s*$", line)
         if m_item and cur_key:
             meta.setdefault(cur_key, [])
@@ -120,21 +140,16 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
                 meta[cur_key].append(m_item.group(1))
             continue
 
-        # key: value
         m_kv = re.match(r"^\s*([A-Za-z0-9_-]+)\s*:\s*(.*?)\s*$", line)
         if m_kv:
             key = m_kv.group(1)
             val = m_kv.group(2)
             cur_key = key
             if val == "":
-                # expect list or block to follow
                 meta[key] = []
             else:
-                # scalar
                 meta[key] = val.strip().strip('"').strip("'")
             continue
-
-        # ignore anything else (keeps parser safe)
 
     return meta, body
 
@@ -202,29 +217,30 @@ def render_page(doc_title: str, page_title: str, body_text: str, meta: dict, pre
         nav_bits.append(f'<a href="./{escape(next_url)}">Next</a>')
     nav = " | ".join(nav_bits)
 
-    # embed metadata for machines (does not clutter the page)
     meta_json = escape(json.dumps(meta, ensure_ascii=False, indent=2))
 
-    return "\n".join([
-        "<!doctype html>",
-        '<html lang="en">',
-        "<head>",
-        '<meta charset="utf-8"/>',
-        '<meta name="viewport" content="width=device-width, initial-scale=1"/>',
-        f"<title>{escape(doc_title)} - {escape(page_title)}</title>",
-        "</head>",
-        "<body>",
-        f"<nav>{nav}</nav>",
-        "<main>",
-        f"<h1>{escape(page_title)}</h1>",
-        f'<script type="application/json" id="section-meta">{meta_json}</script>',
-        '<pre style="white-space:pre-wrap;line-height:1.35">',
-        escape(body_text),
-        "</pre>",
-        "</main>",
-        "</body>",
-        "</html>",
-    ])
+    return "\n".join(
+        [
+            "<!doctype html>",
+            '<html lang="en">',
+            "<head>",
+            '<meta charset="utf-8"/>',
+            '<meta name="viewport" content="width=device-width, initial-scale=1"/>',
+            f"<title>{escape(doc_title)} - {escape(page_title)}</title>",
+            "</head>",
+            "<body>",
+            f"<nav>{nav}</nav>",
+            "<main>",
+            f"<h1>{escape(page_title)}</h1>",
+            f'<script type="application/json" id="section-meta">{meta_json}</script>',
+            '<pre style="white-space:pre-wrap;line-height:1.35">',
+            escape(body_text),
+            "</pre>",
+            "</main>",
+            "</body>",
+            "</html>",
+        ]
+    )
 
 
 def build_from_parts(parts_dir: Path, outdir: Path, doc_title: str) -> None:
@@ -240,7 +256,6 @@ def build_from_parts(parts_dir: Path, outdir: Path, doc_title: str) -> None:
         raw = p.read_text(encoding="utf-8")
         meta, body = parse_front_matter(raw)
 
-        # required fields (with safe defaults)
         sec_id = meta.get("id") or slugify(p.stem)
         order = meta.get("order") or "999999"
         title = meta.get("title") or p.stem
@@ -249,7 +264,6 @@ def build_from_parts(parts_dir: Path, outdir: Path, doc_title: str) -> None:
 
         url = f"{sec_id}.html"
 
-        # keep meta clean + consistent in toc.json
         meta_norm = {
             "id": sec_id,
             "order": order,
@@ -262,28 +276,21 @@ def build_from_parts(parts_dir: Path, outdir: Path, doc_title: str) -> None:
             "url": url,
         }
 
-        items.append({
-            "order": order,
-            "id": sec_id,
-            "meta": meta_norm,
-            "body": body,
-        })
+        items.append({"order": str(order), "id": str(sec_id), "meta": meta_norm, "body": body})
 
-    # stable sort by order then id
     items.sort(key=lambda x: (x["order"], x["id"]))
 
-    # write pages
     for i, it in enumerate(items):
         prev_url = items[i - 1]["meta"]["url"] if i > 0 else None
         next_url = items[i + 1]["meta"]["url"] if i + 1 < len(items) else None
 
         m = it["meta"]
         page_title = f'{m["number"]}. {m["title"]}'.strip(". ").strip() if m["number"] else m["title"]
+
         html = render_page(doc_title, page_title, it["body"], m, prev_url, next_url)
         (outdir / m["url"]).write_text(html, encoding="utf-8")
 
     toc_entries = [it["meta"] for it in items]
-
     (outdir / "index.html").write_text(render_index(doc_title, toc_entries), encoding="utf-8")
     (outdir / "toc.json").write_text(json.dumps(toc_entries, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -304,8 +311,8 @@ def build_from_single_file(src_path: Path, outdir: Path) -> None:
     heads = detect_headings(lines)
 
     if not heads:
-        page = render_page(doc_title, "Full Document", text, {}, None, None)
-        (outdir / "full.html").write_text(page, encoding="utf-8")
+        html = render_page(doc_title, "Full Document", text, {}, None, None)
+        (outdir / "full.html").write_text(html, encoding="utf-8")
         idx = render_index(doc_title, [{"level": 1, "title": "Full Document", "number": "", "url": "full.html"}])
         (outdir / "index.html").write_text(idx, encoding="utf-8")
         (outdir / "toc.json").write_text(
@@ -320,13 +327,15 @@ def build_from_single_file(src_path: Path, outdir: Path) -> None:
     for h in heads:
         fn = file_name_from_heading(h)
         pages.append((h, fn))
-        entries.append({
-            "kind": h.kind,
-            "number": h.number,
-            "level": h.level,
-            "title": h.title,
-            "url": fn,
-        })
+        entries.append(
+            {
+                "kind": h.kind,
+                "number": h.number,
+                "level": h.level,
+                "title": h.title,
+                "url": fn,
+            }
+        )
 
     for i, (h, fn) in enumerate(pages):
         prev_url = pages[i - 1][1] if i > 0 else None
@@ -348,11 +357,10 @@ def build_from_single_file(src_path: Path, outdir: Path) -> None:
     (outdir / "toc.json").write_text(json.dumps(entries, indent=2), encoding="utf-8")
 
 
-def main(src: str, outdir: str):
+def main(src: str, outdir: str) -> None:
     src_path = Path(src)
     out_path = Path(outdir)
 
-    # set your actual dossier title here
     doc_title = "Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack"
 
     if src_path.is_dir():
@@ -364,8 +372,8 @@ def main(src: str, outdir: str):
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage:")
-        print("  python split_dossier.py <parts_dir> <output_dir>")
-        print("  python split_dossier.py <source.md> <output_dir>")
+        print("  python tools/split_dossier.py <parts_dir> <output_dir>")
+        print("  python tools/split_dossier.py <source.md> <output_dir>")
         sys.exit(1)
 
     main(sys.argv[1], sys.argv[2])
