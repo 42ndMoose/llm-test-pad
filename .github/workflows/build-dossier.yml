@@ -32,7 +32,7 @@ jobs:
 
       - name: Split dossier into pages
         run: |
-          python tools/split_dossier.py dossier/source.md dossier/site
+          python tools/split_dossier.py dossier/parts dossier/site
 
       - name: Build claims ledger
         run: |
