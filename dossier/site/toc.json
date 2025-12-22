@@ -143,6 +143,39 @@
     "url": "03-big-three-wef-davos.html"
   },
   {
+    "id": "04-media-control-in-practice",
+    "order": "000500",
+    "number": "4",
+    "level": 1,
+    "title": "Media control in practice: shareholders vs owners vs talent",
+    "keywords": [
+      "\"shareholders\"",
+      "\"corporate management\"",
+      "\"on-air talent\"",
+      "\"board votes\"",
+      "\"CEO pay\"",
+      "\"stewardship\"",
+      "\"risk management\"",
+      "\"Comcast\"",
+      "\"Disney\"",
+      "\"Warner Bros. Discovery\"",
+      "\"Fox\"",
+      "\"Sinclair\"",
+      "\"Murdoch\"",
+      "\"dual-class shares\"",
+      "\"Tucker Carlson\"",
+      "\"Dominion settlement\"",
+      "\"Abby Grossberg\"",
+      "\"Jesse Watters\""
+    ],
+    "summary": [
+      "\"Separates ownership influence from day-to-day editorial decisions by splitting media power into three levels.\"",
+      "\"Uses the Fox/Tucker example to show how legal and reputational risk drives management decisions more than shareholders do.\""
+    ],
+    "related": "[]",
+    "url": "04-media-control-in-practice.html"
+  },
+  {
     "id": "10-main",
     "order": "999999",
     "number": "",

@@ -222,6 +222,71 @@ So even though his government has made tactical moves like killing the consumer 
 
 ⸻
 
+<!-- BEGIN 04-media-control-in-practice.md -->
+
+To keep this grounded, you have to separate three levels:
+	1.	Shareholders: Big Three, plus insiders (Murdochs, etc.).
+	2.	Corporate management: CEOs, boards, news division bosses at Fox, Comcast, Disney, WBD, Sinclair.
+	3.	On-air talent: hosts like Tucker Carlson, Jesse Watters, Maddow, etc.
+
+4.1 What the Big Three actually do
+
+The Big Three’s role is mostly:
+	•	Voting on:
+	•	Board composition,
+	•	CEO pay,
+	•	Major transactions and strategies.
+	•	Issuing stewardship, ESG, and risk expectations:
+	•	Climate and net-zero strategy,
+	•	DEI and “human capital” norms,
+	•	Governance practices.
+
+They do not run day-to-day editorial:
+	•	They are not in the control room deciding which Trump clip runs.
+	•	They create incentives at board level:
+	•	Avoid giant legal liabilities.
+	•	Avoid regulatory shock.
+	•	Stay broadly aligned, or at least not openly hostile, to prevailing ESG and governance frameworks, although that alignment is now contested inside the U.S.
+
+4.2 Murdoch / Fox / Tucker example
+	•	Fox Corp
+	•	Controlled by the Murdoch family trust via dual-class shares.
+	•	Big Three are sizeable but non-controlling shareholders.
+	•	Tucker Carlson
+	•	Became one of the most influential cable hosts in the U.S. by ratings and agenda-setting.
+	•	Fox paid 787.5 million dollars to settle the Dominion Voting Systems defamation case.
+	•	Tucker was also tied up in the Abby Grossberg lawsuit and broader internal HR and culture issues.
+
+After that:
+	•	Management (Rupert and Lachlan Murdoch and Fox executives) fired Tucker.
+	•	The Big Three were in the background as large investors who hate nine-figure settlements, but they were not writing his termination letter.
+
+Takeaway:
+	•	The decision to remove Tucker came from Fox management under legal and reputational pressure.
+	•	The Big Three set the risk climate and own stock, but they did not pick the specific host to fire.
+
+4.3 Why Jesse Watters and other pro-Trump hosts survive
+
+Hosts like Jesse Watters are:
+	•	Profitable, because they produce reliable ratings and ad revenue.
+	•	Useful, because they keep the pro-Trump base on Fox instead of defecting to smaller competitors.
+	•	Lower legal risk so far. They push the line but have not combined a Dominion-scale defamation event with simultaneous HR blow-ups.
+
+As long as a host:
+	•	Delivers ratings and revenue,
+	•	Avoids catastrophic legal risk,
+	•	Does not directly revolt against management,
+
+they are an asset, not a liability.
+
+From the Big Three perspective:
+	•	They own chunks of pro-Trump media (Fox, Sinclair parent) and chunks of anti-Trump media (Comcast, Disney, WBD).
+	•	The system above is diversified. There is conflict on air, and one big financial shell above it.
+
+<!-- END 04-media-control-in-practice.md -->
+
+⸻
+
 <!-- BEGIN 10-main.md -->
 
 ⸻
