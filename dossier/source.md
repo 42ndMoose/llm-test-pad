@@ -125,7 +125,7 @@ Trump’s economic line, and the Vance wing around him, is a break from that scr
 
 ⸻
 
-<!-- BEGIN 03-ownership-layer.md -->
+<!-- BEGIN 02-ownership-layer.md -->
 
 2.	Ownership layer: Big Three and legacy media
 
@@ -181,7 +181,7 @@ Key point:
 	•	The Big Three do not own everything, and they cannot override dual-class insiders like the Murdochs.
 	•	But they are anchor tenants in the ownership stack of most major media conglomerates.
 
-<!-- END 03-ownership-layer.md -->
+<!-- END 02-ownership-layer.md -->
 
 ⸻
 

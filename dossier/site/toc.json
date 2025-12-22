@@ -78,7 +78,7 @@
     "url": "01-elite-civil-war.html"
   },
   {
-    "id": "sec-02-ownership-layer",
+    "id": "02-ownership-layer",
     "order": "000200",
     "number": "2",
     "level": 1,
@@ -107,10 +107,8 @@
       "Shows how the Big Three appear as major institutional holders across media parent companies.",
       "Clarifies the difference between ownership influence and day-to-day editorial control."
     ],
-    "related": [
-      "start-here"
-    ],
-    "url": "sec-02-ownership-layer.html"
+    "related": "[]",
+    "url": "02-ownership-layer.html"
   },
   {
     "id": "10-main",
