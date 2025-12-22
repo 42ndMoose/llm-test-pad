@@ -82,7 +82,7 @@ Key point:
 
 
 
-<!-- BEGIN 01-political-context.md -->
+<!-- BEGIN 00-political-context.md -->
 
 0.	Political context
 
@@ -136,7 +136,7 @@ Underneath all the noise, the same incentive architecture runs three main agenda
 The later sections track how Trump 2.0 and DOGE are hitting each pillar, and how the opposing bloc uses the same machine to resist.
 
 
-<!-- END 01-political-context.md -->
+<!-- END 00-political-context.md -->
 
 
 
