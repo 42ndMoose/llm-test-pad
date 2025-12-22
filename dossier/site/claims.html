@@ -9,12 +9,14 @@
   <nav><a href="./index.html">Index</a></nav>
   <main>
     <h1>Claims Ledger</h1>
-    <p>This page lists atomic claims marked in the source with <code>[CLAIM]</code> or <code>CLAIM:</code>.</p>
+    <p>Claims are extracted from <code>[CLAIM]...[/CLAIM]</code> blocks and <code>CLAIM:</code> lines in the source.</p>
     <ul>
-      <li><a href="./claims.json">claims.json</a> (full)</li>
-      <li><a href="./claims.min.json">claims.min.json</a> (lightweight)</li>
+      <li><a href="./claims.json">claims.json</a></li>
+      <li><a href="./claims.min.json">claims.min.json</a></li>
     </ul>
-    <p>No claims found yet. Add lines like <code>[CLAIM] ...</code> or <code>CLAIM: ...</code> to your dossier.</p>
+    <p>No claims found yet. Add blocks like:</p><pre>[CLAIM]
+Your claim text...
+[/CLAIM]</pre><p>Or single lines like <code>CLAIM: ...</code></p>
   </main>
 </body>
 </html>
