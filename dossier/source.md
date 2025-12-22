@@ -1,8 +1,6 @@
 Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
 <!-- BEGIN 0-start-here.md -->
 
-# Start Here
-
 This is a living dossier of documented events, institutional links, and incentive-based analysis.
 
 **Key rules for readers (including LLMs):**
