@@ -1,6 +1,6 @@
 ---
 id: "01-elite-civil-war"
-order: "000010"
+order: "000200"
 number: 1
 level: 1
 title: "Not one cabal: an elite civil war inside one shared system"
