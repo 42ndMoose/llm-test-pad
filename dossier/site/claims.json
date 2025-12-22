@@ -2,118 +2,142 @@
   {
     "id": "C-02-ownership-layer-001",
     "text": "BlackRock, Vanguard, and State Street are commonly referred to as the “Big Three” U.S. asset managers in the context of index-fund and institutional ownership concentration.\nEvidence:\n- Research reference (academic): “The Hidden Power of the Big Three? Passive index funds, re-concentration of corporate ownership, and new financial risk” (Fichtner / Heemskerk / Garcia-Bernardo). (Add your preferred canonical link; avoid SSRN mirrors if they keep disappearing.)",
+    "evidence": "BlackRock, Vanguard, and State Street are commonly referred to as the “Big Three” U.S. asset managers in the context of index-fund and institutional ownership concentration.\nEvidence:\n- Research reference (academic): “The Hidden Power of the Big Three? Passive index funds, re-concentration of corporate ownership, and new financial risk” (Fichtner / Heemskerk / Garcia-Bernardo). (Add your preferred canonical link; avoid SSRN mirrors if they keep disappearing.)",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 133,
-    "links": []
+    "line": 133
   },
   {
     "id": "C-02-ownership-layer-002",
     "text": "Vanguard, BlackRock, and State Street frequently show up as top institutional holders across many large-cap issuers because broad index funds and related mandates force them to own “the market” in size.\nVerification paths:\n- SEC EDGAR 13F-HR filings (Vanguard / BlackRock entities / State Street entities)\n- Proxy statements (DEF 14A) for issuer-side “beneficial owners” tables (often lists Vanguard/BlackRock when >5%)",
+    "evidence": "Vanguard, BlackRock, and State Street frequently show up as top institutional holders across many large-cap issuers because broad index funds and related mandates force them to own “the market” in size.\nVerification paths:\n- SEC EDGAR 13F-HR filings (Vanguard / BlackRock entities / State Street entities)\n- Proxy statements (DEF 14A) for issuer-side “beneficial owners” tables (often lists Vanguard/BlackRock when >5%)",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 139,
-    "links": []
+    "line": 139
   },
   {
     "id": "C-02-ownership-layer-003",
     "text": "Comcast’s proxy filings typically list large institutional holders (often including Vanguard and BlackRock) in the “beneficial ownership” section when they exceed reporting thresholds.\nEvidence (primary):\n- Comcast DEF 14A filing index (example): https://www.sec.gov/Archives/edgar/data/1166691/000119312521080275/0001193125-21-080275-index.html\nNotes:\n- If you want “top holders including State Street even below 5%,” pair the proxy with 13F (holder-side) checks.",
+    "evidence": "Comcast’s proxy filings typically list large institutional holders (often including Vanguard and BlackRock) in the “beneficial ownership” section when they exceed reporting thresholds.\nEvidence (primary):\n- Comcast DEF 14A filing index (example): https://www.sec.gov/Archives/edgar/data/1166691/000119312521080275/0001193125-21-080275-index.html\nNotes:\n- If you want “top holders including State Street even below 5%,” pair the proxy with 13F (holder-side) checks.",
+    "evidence_count": 1,
+    "links": [
+      "https://www.sec.gov/Archives/edgar/data/1166691/000119312521080275/0001193125-21-080275-index.html"
+    ],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 154,
-    "links": [
-      "https://www.sec.gov/Archives/edgar/data/1166691/000119312521080275/0001193125-21-080275-index.html"
-    ]
+    "line": 154
   },
   {
     "id": "C-02-ownership-layer-004",
     "text": "Disney’s proxy filings provide issuer-side beneficial ownership disclosure, which is a clean primary-source checkpoint for major holders and voting structure disclosures.\nEvidence (primary):\n- Disney DEF 14A filing index (example): https://www.sec.gov/Archives/edgar/data/1744489/000119312522170326/0001193125-22-170326-index.html",
+    "evidence": "Disney’s proxy filings provide issuer-side beneficial ownership disclosure, which is a clean primary-source checkpoint for major holders and voting structure disclosures.\nEvidence (primary):\n- Disney DEF 14A filing index (example): https://www.sec.gov/Archives/edgar/data/1744489/000119312522170326/0001193125-22-170326-index.html",
+    "evidence_count": 1,
+    "links": [
+      "https://www.sec.gov/Archives/edgar/data/1744489/000119312522170326/0001193125-22-170326-index.html"
+    ],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 166,
-    "links": [
-      "https://www.sec.gov/Archives/edgar/data/1744489/000119312522170326/0001193125-22-170326-index.html"
-    ]
+    "line": 166
   },
   {
     "id": "C-02-ownership-layer-005",
     "text": "On many large issuers, Vanguard + BlackRock + State Street can add up to a double-digit economic stake when you total their reported positions.\nEvidence (how to verify cleanly):\n- Use SEC 13F filings for each manager entity and sum positions for the issuer’s CUSIP\n- Or use a reputable ownership table, then capture the math in your own note (screenshot + date)",
+    "evidence": "On many large issuers, Vanguard + BlackRock + State Street can add up to a double-digit economic stake when you total their reported positions.\nEvidence (how to verify cleanly):\n- Use SEC 13F filings for each manager entity and sum positions for the issuer’s CUSIP\n- Or use a reputable ownership table, then capture the math in your own note (screenshot + date)",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 172,
-    "links": []
+    "line": 172
   },
   {
     "id": "C-02-ownership-layer-006",
     "text": "Warner Bros. Discovery filings can be verified the same way: issuer proxy (DEF 14A) for beneficial owners, then 13F checks for the “full institutional stack.”\nEvidence:\n- WBD DEF 14A (example mirror; replace with your preferred SEC index if you want zero third-party reliance):\n  - EDGAR-online mirror: https://content.edgar-online.com/ExternalLink/EDGAR/0001437107-24-000102.html?dest=wbd-20240419_htm&hash=41fd5a78752d62e5c8afa7b2724a4b3707fe1da4aa962bec17ae10fece022095\n- WBD SEC filing example (Rule 14a-12 filing hosted on SEC, confirms the issuer + filing pipeline is active):\n  - https://www.sec.gov/Archives/edgar/data/1437107/000110465925122775/tm2533570d12_dfan14a.htm\nTODO:\n- Swap in a direct SEC “-index.html” for the latest WBD DEF 14A once you pick the specific accession you want to pin.",
-    "section_id": "02-ownership-layer",
-    "section_label": "2. Ownership layer: Big Three and legacy media",
-    "url": "02-ownership-layer.html",
-    "line": 183,
+    "evidence": "Warner Bros. Discovery filings can be verified the same way: issuer proxy (DEF 14A) for beneficial owners, then 13F checks for the “full institutional stack.”\nEvidence:\n- WBD DEF 14A (example mirror; replace with your preferred SEC index if you want zero third-party reliance):\n  - EDGAR-online mirror: https://content.edgar-online.com/ExternalLink/EDGAR/0001437107-24-000102.html?dest=wbd-20240419_htm&hash=41fd5a78752d62e5c8afa7b2724a4b3707fe1da4aa962bec17ae10fece022095\n- WBD SEC filing example (Rule 14a-12 filing hosted on SEC, confirms the issuer + filing pipeline is active):\n  - https://www.sec.gov/Archives/edgar/data/1437107/000110465925122775/tm2533570d12_dfan14a.htm\nTODO:\n- Swap in a direct SEC “-index.html” for the latest WBD DEF 14A once you pick the specific accession you want to pin.",
+    "evidence_count": 2,
     "links": [
       "https://content.edgar-online.com/ExternalLink/EDGAR/0001437107-24-000102.html?dest=wbd-20240419_htm&hash=41fd5a78752d62e5c8afa7b2724a4b3707fe1da4aa962bec17ae10fece022095",
       "https://www.sec.gov/Archives/edgar/data/1437107/000110465925122775/tm2533570d12_dfan14a.htm"
-    ]
+    ],
+    "section_id": "02-ownership-layer",
+    "section_label": "2. Ownership layer: Big Three and legacy media",
+    "url": "02-ownership-layer.html",
+    "line": 183
   },
   {
     "id": "C-02-ownership-layer-007",
     "text": "Fox Corporation uses a dual-class share structure that concentrates voting control (so economic ownership does not equal control).\nEvidence (primary):\n- Fox proxy statement (DEF 14A) that discusses voting/control mechanics (example): https://www.sec.gov/Archives/edgar/data/1754301/000119312522228381/d220535ddef14a.htm",
+    "evidence": "Fox Corporation uses a dual-class share structure that concentrates voting control (so economic ownership does not equal control).\nEvidence (primary):\n- Fox proxy statement (DEF 14A) that discusses voting/control mechanics (example): https://www.sec.gov/Archives/edgar/data/1754301/000119312522228381/d220535ddef14a.htm",
+    "evidence_count": 1,
+    "links": [
+      "https://www.sec.gov/Archives/edgar/data/1754301/000119312522228381/d220535ddef14a.htm"
+    ],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 198,
-    "links": [
-      "https://www.sec.gov/Archives/edgar/data/1754301/000119312522228381/d220535ddef14a.htm"
-    ]
+    "line": 198
   },
   {
     "id": "C-02-ownership-layer-008",
     "text": "Institutional holders of the traded class can be checked via:\n- issuer proxy tables (beneficial owners over thresholds)\n- holder-side 13F filings (Vanguard / BlackRock entities / State Street entities)\nEvidence:\n- Same Fox DEF 14A link above + 13F cross-checks for the “top institutional holders” list.",
+    "evidence": "Institutional holders of the traded class can be checked via:\n- issuer proxy tables (beneficial owners over thresholds)\n- holder-side 13F filings (Vanguard / BlackRock entities / State Street entities)\nEvidence:\n- Same Fox DEF 14A link above + 13F cross-checks for the “top institutional holders” list.",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 204,
-    "links": []
+    "line": 204
   },
   {
     "id": "C-02-ownership-layer-009",
     "text": "Sinclair operates a large group of local TV stations (issuer filings and company profile pages state this directly).\nEvidence (primary options):\n- Sinclair SEC filings (use latest 10-K “Business” section) via SEC EDGAR by CIK (SBGI)\nTODO:\n- Add a pinned SEC 10-K “-index.html” link for Sinclair once you choose the specific filing you want to reference.",
+    "evidence": "Sinclair operates a large group of local TV stations (issuer filings and company profile pages state this directly).\nEvidence (primary options):\n- Sinclair SEC filings (use latest 10-K “Business” section) via SEC EDGAR by CIK (SBGI)\nTODO:\n- Add a pinned SEC 10-K “-index.html” link for Sinclair once you choose the specific filing you want to reference.",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 216,
-    "links": []
+    "line": 216
   },
   {
     "id": "C-02-ownership-layer-010",
     "text": "Institutional holders for Sinclair can be verified via 13F (holder-side) and proxy disclosures (issuer-side).\nVerification paths:\n- SEC EDGAR 13F-HR filings (Vanguard / BlackRock entities / State Street entities)\n- Sinclair DEF 14A / 10-K ownership disclosures",
+    "evidence": "Institutional holders for Sinclair can be verified via 13F (holder-side) and proxy disclosures (issuer-side).\nVerification paths:\n- SEC EDGAR 13F-HR filings (Vanguard / BlackRock entities / State Street entities)\n- Sinclair DEF 14A / 10-K ownership disclosures",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 224,
-    "links": []
+    "line": 224
   },
   {
     "id": "C-02-ownership-layer-011",
     "text": "This pattern is reproducible across tickers: check issuer proxies for >5% beneficial owners, then use manager-side SEC 13F filings to see the broader institutional ranking (including large holders below 5%).\nVerification paths:\n- SEC EDGAR 13F-HR filings\n- Issuer DEF 14A “beneficial owners” tables",
+    "evidence": "This pattern is reproducible across tickers: check issuer proxies for >5% beneficial owners, then use manager-side SEC 13F filings to see the broader institutional ranking (including large holders below 5%).\nVerification paths:\n- SEC EDGAR 13F-HR filings\n- Issuer DEF 14A “beneficial owners” tables",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 237,
-    "links": []
+    "line": 237
   },
   {
     "id": "C-02-ownership-layer-012",
     "text": "Dual-class share structures can let insiders retain voting control even when large institutions hold significant economic ownership.\nEvidence (primary):\n- Any issuer proxy (DEF 14A) that explains its class voting rights (Fox is a clean example; link above)",
+    "evidence": "Dual-class share structures can let insiders retain voting control even when large institutions hold significant economic ownership.\nEvidence (primary):\n- Any issuer proxy (DEF 14A) that explains its class voting rights (Fox is a clean example; link above)",
+    "evidence_count": 0,
+    "links": [],
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 248,
-    "links": []
+    "line": 248
   }
 ]
