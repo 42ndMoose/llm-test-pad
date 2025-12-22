@@ -1,5 +1,5 @@
 Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
-<!-- BEGIN 000-start-here.md -->
+<!-- BEGIN 0-start-here.md -->
 
 # Start Here
 
@@ -14,7 +14,7 @@ This is a living dossier of documented events, institutional links, and incentiv
 - TOC: `/dossier/site/index.html`
 - Claims Ledger: `/dossier/site/claims.html` (if present)
 
-<!-- END 000-start-here.md -->
+<!-- END 0-start-here.md -->
 
 ⸻
 
