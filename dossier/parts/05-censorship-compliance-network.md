@@ -1,0 +1,134 @@
+---
+id: "05-censorship-compliance-network"
+order: "000600"
+number: "5"
+level: 1
+title: "The censorship / compliance network beyond ownership"
+keywords:
+  - "regulators"
+  - "public broadcasters"
+  - "Ofcom"
+  - "Online Safety Act"
+  - "BBC licence"
+  - "Canada"
+  - "CBC"
+  - "CRTC"
+  - "Bill C-11"
+  - "Online Streaming Act"
+  - "Trusted News Initiative"
+  - "TNI"
+  - "antitrust"
+  - "DOJ Statement of Interest"
+  - "Election Integrity Partnership"
+  - "EIP"
+  - "Virality Project"
+  - "DFRLab"
+  - "Atlantic Council"
+  - "IFCN"
+  - "Poynter"
+  - "fact-checking"
+  - "brand safety"
+  - "GARM"
+  - "WFA"
+summary:
+  - "Maps the regulation + NGO + advertiser + platform stack that standardizes what speech and narratives are treated as 'allowed.'"
+  - "Frames this as a networked compliance regime rather than a single command center."
+related: []
+verification: []
+---
+
+Ownership is one layer. There is also a regulation plus NGO plus advertiser plus platform stack that standardizes what is “allowed.”
+
+5.1 Regulators and public broadcasters
+
+UK – Ofcom and the Online Safety Act
+	•	Ofcom is the UK’s communications regulator.
+	•	The Online Safety Act 2023 gives Ofcom power to:
+	•	Demand data and internal documents from platforms,
+	•	Set binding codes of practice,
+	•	Fine non-compliant companies up to 18 million pounds or 10 percent of global annual turnover, and in extreme cases order access to be blocked in the UK.
+
+This creates a “safety / misinfo / harms” baseline that all platforms know they have to respect.
+
+BBC licence enforcement
+	•	TV Licensing, acting under the Communications Act 2003, can obtain search warrants with police present to check for unlicensed TV reception equipment.
+	•	Using a TV receiver without a licence is a criminal offence, enforced through magistrates’ courts.
+	•	Refusal of entry without a warrant ends the visit, but:
+	•	Warrants exist,
+	•	They permit forced entry with “reasonable force” to enforce licence rules.
+
+So the BBC is funded primarily by a mandatory licence fee backed by criminal penalties and warrant powers, not a voluntary subscription.
+
+Canada – CBC and CRTC
+	•	CBC/Radio-Canada
+	•	Its Board of Directors is appointed by the federal government (Governor in Council) under the Broadcasting Act.
+	•	A majority of its revenue comes from annual parliamentary appropriations, with the rest from advertising and other sources.
+	•	CRTC
+	•	Regulates broadcast and online streaming under the Broadcasting Act and the Online Streaming Act (Bill C-11).
+	•	Requires foreign streaming services over a revenue threshold to contribute a percentage of Canadian revenues to funds that support Canadian and Indigenous content, including local news.
+
+Net effect:
+	•	Public broadcasters are tied tightly to state priorities.
+	•	Regulators have direct leverage over both traditional media and global platforms through licensing, fines, and compulsory funding schemes.
+
+5.2 NGOs, academia, and consortia
+
+Trusted News Initiative (TNI)
+	•	Coalition originally involving BBC, AP, Reuters, the Washington Post, and major platforms, framed as a way to coordinate on “mis/disinformation,” especially around elections and health.
+	•	In antitrust litigation, plaintiffs allege TNI members colluded to suppress rival outlets on major platforms.
+	•	A DOJ antitrust Statement of Interest has said antitrust law protects viewpoint competition and warned that exempting “viewpoint collusion” would let dominant outlets and platforms jointly block alternative perspectives. That extends Sherman Act logic into the “marketplace of ideas,” not just price or output.
+
+So even DOJ is now on record that coordinated “truth curation” by dominant players can raise antitrust issues.
+
+Election Integrity Partnership (EIP) / Virality Project
+	•	Coalition tying together:
+	•	Stanford Internet Observatory (SIO),
+	•	University of Washington’s Center for an Informed Public,
+	•	Graphika,
+	•	Atlantic Council’s DFRLab,
+	•	With input channels to CISA and other agencies.
+	•	House Judiciary staff work, based on internal tickets and emails, shows that:
+	•	EIP and Virality flagged true posts, jokes, and political speech as “misinformation,”
+	•	Federal actors used these hubs to route pressure to platforms in an “arms-length” way.
+
+Atlantic Council / DFRLab partnership with platforms
+	•	Facebook (Meta) announced a formal partnership with the Atlantic Council’s DFRLab to help them monitor and act on “election-related propaganda and disinformation.”
+
+That plugs a NATO-aligned think tank directly into content decisions on a dominant platform.
+
+IFCN and fact-checking pipes
+	•	Meta’s third-party fact-checking program historically relied on fact-checkers certified by the International Fact-Checking Network (IFCN), run by Poynter.
+	•	When an IFCN-certified partner rated a story as false or misleading, platforms used it as a trigger for labels, downranking, and demonetization.
+
+Even where specific programs are now being scaled back or rebranded, the architecture (NGO to certification to platform enforcement) is what matters.
+
+Censorship-industrial mapping
+	•	Groups like the Foundation for Freedom Online, plus congressional investigations, have mapped:
+	•	Grants,
+	•	Contracts,
+	•	Slack channels,
+	•	Joint reports,
+showing how agencies, NGOs, and platforms built a coordinated “disinformation” bureaucracy.
+
+It is a network rather than a single command center, but the effect is standardized “truth enforcement.”
+
+5.3 Advertisers and brand safety (GARM and after)
+	•	Global Alliance for Responsible Media (GARM):
+	•	World Federation of Advertisers initiative launched as a cross-industry brand-safety effort.
+	•	Produced a Brand Safety Floor + Suitability Framework that:
+	•	Defined categories of “harmful content” (violence, adult, hate, etc.),
+	•	Later added “misinformation” as a monetization-sensitive category.
+	•	Advertisers and ad-tech vendors used GARM categories to decide which content was “brand-safe,” and platforms tuned their ad tools to those definitions.
+	•	Legal and political backlash:
+	•	Rumble and later X sued WFA/GARM and major advertisers, alleging an anticompetitive group boycott of “unsafe” platforms.
+	•	State-level investigations opened into GARM as a possible ad cartel that targeted conservative or “non-aligned” platforms.
+	•	Result:
+	•	GARM as an organization was officially wound down.
+
+Even so:
+	•	GARM-style taxonomies live on in:
+	•	House reports,
+	•	Ad-tech products,
+	•	Brand-safety documents that simply continue to use the same categories.
+
+Net effect: content outside those norms gets less ad money. That hurts independent and oppositional outlets more than big incumbents.
