@@ -18,7 +18,7 @@ This is a living dossier of documented events, institutional links, and incentiv
 
 <!-- BEGIN 00-political-context.md -->
 
-0.	Political context
+Political context
 	•	Donald Trump is serving again as president of the United States as the 45th and 47th president, back in office since January 20, 2025.
 	•	His second term is focused heavily on:
 	•	Rolling back DEI inside the federal state and its contractor ecosystem (Executive Order 14151, Ending Radical and Wasteful Government DEI Programs and Preferencing, plus follow-on orders).
