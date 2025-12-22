@@ -30,8 +30,6 @@ summary:
 related: []
 ---
 
-1.	Not one cabal: an elite civil war inside one machine
-
 There is not a single, unified world-brain running everything. What you have is:
 
 1.1 Two main elite blocs
