@@ -1,26 +1,28 @@
 ---
-id: 00
+id: "00-political-context"
+order: "000000"
 number: 0
-title: Political context
+level: 1
+title: "Political context"
 keywords:
-  - Trump 2.0
-  - DEI rollback
-  - ESG
-  - net zero
-  - tariffs
-  - trade leverage
-  - censorship network
-  - disinformation
-  - DOJ antitrust
-  - Big Three
+  - "Trump 2.0"
+  - "DEI rollback"
+  - "ESG"
+  - "net zero"
+  - "tariffs"
+  - "trade leverage"
+  - "censorship network"
+  - "disinformation"
+  - "DOJ antitrust"
+  - "Big Three"
 summary:
-  - Sets the political frame for Trump’s second term and the main institutional battlegrounds.
-  - Explains why mainstream “neutral” platforms tend to tilt toward legacy-media consensus.
-  - Defines a three-pillar model: narrative control, the money spigot, and mass immigration.
+  - "Sets the political frame for Trump’s second term and the main institutional battlegrounds."
+  - "Explains why mainstream “neutral” platforms tend to tilt toward legacy-media consensus."
+  - "Defines a three-pillar model: narrative control, the money spigot, and mass immigration."
+related: []
 ---
 
 0.	Political context
-
 	•	Donald Trump is serving again as president of the United States as the 45th and 47th president, back in office since January 20, 2025.
 	•	His second term is focused heavily on:
 	•	Rolling back DEI inside the federal state and its contractor ecosystem (Executive Order 14151, Ending Radical and Wasteful Government DEI Programs and Preferencing, plus follow-on orders).
