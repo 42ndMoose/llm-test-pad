@@ -66,18 +66,30 @@ def _looks_like_section_boundary(line: str) -> bool:
 
 def strip_claims(text: str) -> str:
     """
-    Remove claim extraction scaffolding from human-facing pages:
-      - [CLAIM]...[/CLAIM] blocks
-      - single-line CLAIM: / [CLAIM] lines
-      - inline [C] markers
-      - Evidence/Links/Verification blocks (skip until blank line; safety-stop on next heading/divider)
-    Keeps source.md and parts intact for extraction tooling, but renders clean HTML.
+    Clean human-facing pages:
+      - Removes [CLAIM]...[/CLAIM] blocks and single-line CLAIM markers
+      - Removes inline [C] markers but keeps the claim sentence
+      - If a line contains [C], hide subsequent lines until:
+          * a blank line, OR
+          * the next claim marker ([C], CLAIM:, [CLAIM] block), OR
+          * a new section boundary (heading/divider)
+      - Also strips standalone Evidence/Links/Sources blocks.
     """
     lines = text.splitlines()
     out: list[str] = []
 
+    def is_boundary(s: str) -> bool:
+        return bool(_looks_like_section_boundary(s))
+
+    def is_claim_start(s: str) -> bool:
+        return bool(
+            CLAIM_BLOCK_START_RE.match(s)
+            or CLAIM_LINE_RE.match(s)
+            or C_MARKER_RE.search(s)
+        )
+
     i = 0
-    pending_c_evidence = False
+    skip_after_c = False
 
     while i < len(lines):
         line = lines[i]
@@ -89,56 +101,44 @@ def strip_claims(text: str) -> str:
                 i += 1
             if i < len(lines) and CLAIM_BLOCK_END_RE.match(lines[i]):
                 i += 1
-            pending_c_evidence = False
+            skip_after_c = False
             continue
 
-        # 2) Drop single-line claim declarations
+        # 2) Drop single-line CLAIM: / [CLAIM] lines
         if CLAIM_LINE_RE.match(line):
             i += 1
-            pending_c_evidence = False
+            skip_after_c = False
             continue
 
-        # 3) If we just saw a [C] marker, optionally skip the evidence block that follows
-        if pending_c_evidence:
+        # 3) If we're in "hide evidence after [C]" mode, skip until stop conditions
+        if skip_after_c:
             s = line.strip()
+
+            # stop on blank line
             if not s:
-                # keep one blank line to preserve paragraph separation
                 if out and out[-1].strip():
                     out.append("")
                 i += 1
-                pending_c_evidence = False
+                skip_after_c = False
                 continue
 
-            # evidence header OR bullet/url/indented lines right after a [C] line
-            if EVIDENCE_HEADER_RE.match(line) or BULLET_RE.match(line) or URL_ONLY_RE.match(line) or INDENT_RE.match(line):
-                # consume until blank line; safety-stop if we hit a new section boundary
-                i += 1
-                while i < len(lines):
-                    if not lines[i].strip():
-                        break
-                    if _looks_like_section_boundary(lines[i]):
-                        break
-                    i += 1
-
-                # preserve a single blank line separation if we ended on blank
-                if i < len(lines) and not lines[i].strip():
-                    if out and out[-1].strip():
-                        out.append("")
-                    i += 1
-
-                pending_c_evidence = False
+            # stop BEFORE a new claim/boundary and reprocess that line normally
+            if is_boundary(line) or is_claim_start(line):
+                skip_after_c = False
                 continue
 
-            pending_c_evidence = False
-            # fall through to normal processing for this line
+            # otherwise hide this line
+            i += 1
+            continue
 
-        # 4) If an Evidence/Links/Verification block appears on its own, strip it too
+        # 4) Strip standalone Evidence/Links/Sources blocks even without [C]
         if EVIDENCE_HEADER_RE.match(line):
             i += 1
             while i < len(lines):
                 if not lines[i].strip():
                     break
-                if _looks_like_section_boundary(lines[i]):
+                # stop BEFORE next section/claim and reprocess it
+                if is_boundary(lines[i]) or is_claim_start(lines[i]):
                     break
                 i += 1
 
@@ -148,15 +148,17 @@ def strip_claims(text: str) -> str:
                 i += 1
             continue
 
-        # 5) Remove inline [C] markers but keep the sentence
+        # 5) Normal line: remove [C] inline marker, keep content
         had_c = bool(C_MARKER_RE.search(line))
         cleaned = C_MARKER_RE.sub(" ", line)
         cleaned = re.sub(r"[ \t]{2,}", " ", cleaned).rstrip()
 
         out.append(cleaned)
 
-        # if the sentence had [C], we expect an Evidence block next
-        pending_c_evidence = had_c
+        # If this line had [C], hide following evidence lines
+        if had_c:
+            skip_after_c = True
+
         i += 1
 
     return "\n".join(out).strip() + "\n"
