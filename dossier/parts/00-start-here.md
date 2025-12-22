@@ -1,15 +1,16 @@
 ---
-id: start-here
+id: "00-start-here"
 order: "000000"
+number: ""
 level: 1
-title: Start Here
+title: "Start Here"
 keywords:
-  - navigation
-  - toc
-  - how to use
+  - "navigation"
+  - "toc"
+  - "how to use"
 summary:
-  - Landing page for humans and LLMs.
-  - Explains how to navigate and how to interpret sections.
+  - "Landing page for humans and LLMs."
+  - "Explains how to navigate and how to interpret sections."
 related: []
 ---
 
