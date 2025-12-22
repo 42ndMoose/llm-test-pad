@@ -1,32 +1,32 @@
 ---
-id: 01-elite-civil-war
-order: 000010
+id: "01-elite-civil-war"
+order: "000010"
 number: 1
 level: 1
-title: Not one cabal: an elite civil war inside one machine
+title: "Not one cabal: an elite civil war inside one shared system"
 keywords:
-  - elite factions
-  - Davos
-  - WEF
-  - ESG
-  - DEI
-  - stakeholder capitalism
-  - America First
-  - nationalism
-  - tariffs
-  - onshoring
-  - Wall Street
-  - offshoring
-  - Big Three
-  - BlackRock
-  - Vanguard
-  - State Street
-  - Chamber of Commerce
-  - immigration
-  - Vance
+  - "elite factions"
+  - "Davos"
+  - "WEF"
+  - "ESG"
+  - "DEI"
+  - "stakeholder capitalism"
+  - "America First"
+  - "nationalism"
+  - "tariffs"
+  - "onshoring"
+  - "Wall Street"
+  - "offshoring"
+  - "Big Three"
+  - "BlackRock"
+  - "Vanguard"
+  - "State Street"
+  - "Chamber of Commerce"
+  - "immigration"
+  - "Vance"
 summary:
-  - Frames the power structure as rival elite blocs fighting inside one shared system, not a single all-controlling cabal.
-  - Explains the older Wall Street offshoring script and why Trump’s tariffs, onshoring, and tighter immigration break that consensus.
+  - "Frames the power structure as rival elite blocs fighting inside one shared system, not a single all-controlling cabal."
+  - "Explains the older Wall Street offshoring script and why Trump’s tariffs, onshoring, and tighter immigration break that consensus."
 related: []
 ---
 
