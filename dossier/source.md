@@ -760,6 +760,66 @@ In the three-pillar model, this fits squarely inside Pillar 1 (political censors
 
 ⸻
 
+<!-- BEGIN 09-lawfare-and-why-slow.md -->
+
+Lawfare, prosecutions, and why accountability is slow
+
+Now, specifically on Comey, Bondi, and why this is all so slow even with Trump back in power.
+
+9.1 Bondi, DOJ, and Comey
+	•	Pam Bondi is now Attorney General under Trump’s second term.
+	•	Under prior administrations, DOJ repeatedly declined to charge James Comey despite harsh Inspector General findings on:
+	•	His handling of Trump memos,
+	•	FISA abuse around Crossfire Hurricane.
+	•	Under Trump 2.0, Comey was finally indicted, but on narrower charges:
+	•	False statements and obstruction linked to later testimony and handling of investigative actions, not a giant all-encompassing “Russiagate RICO.”
+
+That fits the pattern:
+	•	Instead of swinging for an unwieldy mega-conspiracy in front of a D.C. jury, Bondi’s DOJ targeted specific, recent, provable offences that survived statutes of limitation and venue constraints.
+	•	Even then, motions practice and venue bias mattered. A D.C. judge ultimately dismissed the indictment on procedural and jurisdictional grounds before a jury could test the core allegations. Appeals and related investigative work can continue, but the headline result is that Comey walks for now.
+
+This is textbook lawfare symmetry:
+	•	The same legal culture that allowed aggressive, creative theories to be used against Trump and his allies for years suddenly becomes hyper-formalistic and cautious when the target is a former FBI Director who served the prior regime.
+
+9.2 Why not mass prosecutions of “all the bad actors”?
+
+Hard constraints:
+	1.	Criminal law is not the same as moral outrage.
+	•	Being corrupt, biased, or a regime propagandist is not automatically a crime.
+	•	You still need clean statutory hooks: perjury, obstruction, bribery, fraud, and so on.
+	2.	Statutes of limitation.
+	•	Many of the ugliest episodes (early Crossfire Hurricane, first-wave Covid censorship, 2020 “fortification”) are now several years back.
+	•	If the clock runs out, you are finished before you start.
+	3.	Venue and juries.
+	•	Big federal cases land in D.C. and other blue venues.
+	•	Durham already showed what that looks like: brutal report on FBI behavior, but almost no serious convictions and high-profile acquittals. Juries there are sympathetic to the same institutions you are trying to put on trial.
+	4.	DOJ bureaucracy.
+	•	Career prosecutors and agents were not swapped out overnight in 2025.
+	•	They can slow-walk, undermine, or simply decline to bring cases they see as risky or “politicized.”
+	5.	Norms against purge politics.
+	•	The “independent DOJ” norm and judicial culture make large-scale political purges very hard even when the targets arguably deserve consequences.
+
+So even with Bondi and Trump:
+	•	They cannot sign an order and have Comey, Brennan, Clapper, Mayorkas, and half of the censorship-industrial complex in cuffs by Monday.
+	•	They have to build narrow, winnable cases or risk a string of courtroom losses that can be used forever as “proof there was nothing there.”
+
+9.3 Congressional subpoenas vs actual criminal cases
+	•	House committees can:
+	•	Subpoena documents,
+	•	Drag witnesses into hearings,
+	•	Publish damning reports,
+	•	Refer contempt or perjury.
+
+But:
+	•	Executive privilege, agency resistance, and court fights stretch timelines.
+	•	Even slam-dunk findings still need DOJ to turn them into indictments.
+
+That is why you see huge investigative output (reports, hearings, leaks) but relatively few high-level criminal convictions. Different branch, different tools.
+
+<!-- END 09-lawfare-and-why-slow.md -->
+
+⸻
+
 <!-- BEGIN 10-main.md -->
 
 ⸻

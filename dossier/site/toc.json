@@ -319,6 +319,37 @@
     "url": "08-trump-vs-architecture.html"
   },
   {
+    "id": "09-lawfare-and-why-slow",
+    "order": "001000",
+    "number": "9",
+    "level": 1,
+    "title": "Lawfare, prosecutions, and why accountability is slow",
+    "keywords": [
+      "\"lawfare\"",
+      "\"DOJ\"",
+      "\"Attorney General\"",
+      "\"Pam Bondi\"",
+      "\"James Comey\"",
+      "\"indictment\"",
+      "\"dismissal\"",
+      "\"appeal\"",
+      "\"statutes of limitation\"",
+      "\"venue\"",
+      "\"D.C. juries\"",
+      "\"Durham\"",
+      "\"bureaucracy\"",
+      "\"subpoenas\"",
+      "\"contempt\"",
+      "\"perjury\""
+    ],
+    "summary": [
+      "\"Explains practical constraints that limit sweeping prosecutions even under a friendly administration.\"",
+      "\"Uses the Comey/Bondi framing to highlight venue, procedure, and institutional resistance as the throttle.\""
+    ],
+    "related": "[]",
+    "url": "09-lawfare-and-why-slow.html"
+  },
+  {
     "id": "10-main",
     "order": "999999",
     "number": "",
