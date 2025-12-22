@@ -33,8 +33,6 @@ verification:
   - "Institutional holders: SEC 13F filings for Vanguard/BlackRock/State Street"
 ---
 
-2.	Ownership layer: Big Three and legacy media
-
 The “Big Three” asset managers are:
 	•	BlackRock
 	•	Vanguard
