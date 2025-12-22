@@ -16,10 +16,21 @@ NUM_HEADING_RE = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
 MD_HEADING_RE = re.compile(r"^\s*(#{1,6})\s+(.+?)\s*$")
 DIVIDER_RE = re.compile(r"^\s*(?:⸻+|[-_]{3,}|={3,})\s*$")
 
-# Claim stripping (for clean human pages)
+# Claim blocks / claim lines (for extraction)
 CLAIM_BLOCK_START_RE = re.compile(r"^\s*(?:[-*]\s*)?\[(?i:claim)\]\s*$")
 CLAIM_BLOCK_END_RE = re.compile(r"^\s*\[/(?i:claim)\]\s*$")
-CLAIM_LINE_RE = re.compile(r"^\s*(?:[-*]\s*)?(?:\[(?i:claim)\]\s*|(?i:claim)\s*:\s*).+?\s*$")
+CLAIM_LINE_RE = re.compile(
+    r"^\s*(?:[-*]\s*)?(?:\[(?i:claim)\]\s*|(?i:claim)\s*:\s*).+?\s*$"
+)
+
+# [C] markers + evidence blocks (for clean human pages)
+C_MARKER_RE = re.compile(r"\s*\[(?i:c)\]\s*")
+EVIDENCE_HEADER_RE = re.compile(
+    r"^\s*(?i:(evidence|links|sources|verification paths?|verify|citations))\s*:?\s*(?:\(.*\))?\s*$"
+)
+URL_ONLY_RE = re.compile(r"^\s*https?://\S+\s*$")
+BULLET_RE = re.compile(r"^\s*(?:[-*•]\s+|\d+\.\s+).+")
+INDENT_RE = re.compile(r"^\s{2,}\S+")
 
 
 @dataclass
@@ -46,28 +57,106 @@ def file_name_from_heading(h: Heading) -> str:
     return f"{slugify(h.title)}.html"
 
 
+def _looks_like_section_boundary(line: str) -> bool:
+    s = line.strip()
+    if not s:
+        return False
+    return bool(NUM_HEADING_RE.match(s) or MD_HEADING_RE.match(s) or DIVIDER_RE.match(s))
+
+
 def strip_claims(text: str) -> str:
     """
-    Remove claim markers/blocks from the text that gets rendered to human-facing pages.
-    Keeps the source clean for extraction but avoids clutter in HTML pages.
+    Remove claim extraction scaffolding from human-facing pages:
+      - [CLAIM]...[/CLAIM] blocks
+      - single-line CLAIM: / [CLAIM] lines
+      - inline [C] markers
+      - Evidence/Links/Verification blocks (skip until blank line; safety-stop on next heading/divider)
+    Keeps source.md and parts intact for extraction tooling, but renders clean HTML.
     """
     lines = text.splitlines()
     out: list[str] = []
+
     i = 0
+    pending_c_evidence = False
+
     while i < len(lines):
-        if CLAIM_BLOCK_START_RE.match(lines[i]):
+        line = lines[i]
+
+        # 1) Drop [CLAIM]...[/CLAIM] blocks entirely
+        if CLAIM_BLOCK_START_RE.match(line):
             i += 1
             while i < len(lines) and not CLAIM_BLOCK_END_RE.match(lines[i]):
                 i += 1
             if i < len(lines) and CLAIM_BLOCK_END_RE.match(lines[i]):
                 i += 1
+            pending_c_evidence = False
             continue
 
-        if CLAIM_LINE_RE.match(lines[i]):
+        # 2) Drop single-line claim declarations
+        if CLAIM_LINE_RE.match(line):
             i += 1
+            pending_c_evidence = False
             continue
 
-        out.append(lines[i])
+        # 3) If we just saw a [C] marker, optionally skip the evidence block that follows
+        if pending_c_evidence:
+            s = line.strip()
+            if not s:
+                # keep one blank line to preserve paragraph separation
+                if out and out[-1].strip():
+                    out.append("")
+                i += 1
+                pending_c_evidence = False
+                continue
+
+            # evidence header OR bullet/url/indented lines right after a [C] line
+            if EVIDENCE_HEADER_RE.match(line) or BULLET_RE.match(line) or URL_ONLY_RE.match(line) or INDENT_RE.match(line):
+                # consume until blank line; safety-stop if we hit a new section boundary
+                i += 1
+                while i < len(lines):
+                    if not lines[i].strip():
+                        break
+                    if _looks_like_section_boundary(lines[i]):
+                        break
+                    i += 1
+
+                # preserve a single blank line separation if we ended on blank
+                if i < len(lines) and not lines[i].strip():
+                    if out and out[-1].strip():
+                        out.append("")
+                    i += 1
+
+                pending_c_evidence = False
+                continue
+
+            pending_c_evidence = False
+            # fall through to normal processing for this line
+
+        # 4) If an Evidence/Links/Verification block appears on its own, strip it too
+        if EVIDENCE_HEADER_RE.match(line):
+            i += 1
+            while i < len(lines):
+                if not lines[i].strip():
+                    break
+                if _looks_like_section_boundary(lines[i]):
+                    break
+                i += 1
+
+            if i < len(lines) and not lines[i].strip():
+                if out and out[-1].strip():
+                    out.append("")
+                i += 1
+            continue
+
+        # 5) Remove inline [C] markers but keep the sentence
+        had_c = bool(C_MARKER_RE.search(line))
+        cleaned = C_MARKER_RE.sub(" ", line)
+        cleaned = re.sub(r"[ \t]{2,}", " ", cleaned).rstrip()
+
+        out.append(cleaned)
+
+        # if the sentence had [C], we expect an Evidence block next
+        pending_c_evidence = had_c
         i += 1
 
     return "\n".join(out).strip() + "\n"
