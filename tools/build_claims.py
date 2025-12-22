@@ -4,15 +4,14 @@ from __future__ import annotations
 import json
 import re
 import sys
-from dataclasses import dataclass
 from html import escape
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 
 BEGIN_PART_RE = re.compile(r"^\s*<!--\s*BEGIN\s+(.+?)\s*-->\s*$")
 
-# Claims:
+# Single-line claims:
 #   [CLAIM] text...
 #   CLAIM: text...
 #   - [CLAIM] text...
@@ -26,6 +25,10 @@ CLAIM_LINE_RE = re.compile(
 #   [/CLAIM]
 CLAIM_BLOCK_START_RE = re.compile(r"^\s*(?:[-*]\s*)?\[(?i:claim)\]\s*$")
 CLAIM_BLOCK_END_RE = re.compile(r"^\s*\[/(?i:claim)\]\s*$")
+
+# Inline suffix claims:
+#   Some claim text here. [C]
+C_SUFFIX_RE = re.compile(r"^\s*(.+?)\s*\[c\]\s*$", re.IGNORECASE)
 
 URL_RE = re.compile(r"https?://[^\s)>\]]+")
 
@@ -47,7 +50,6 @@ def _ensure_list(v: Any) -> list[str]:
         if s in ("", "[]"):
             return []
         return [_strip_wrapping_quotes(s)]
-    # last-resort
     s = str(v).strip()
     return [s] if s else []
 
@@ -73,7 +75,7 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
             end_idx = i
             break
     if end_idx is None:
-        return {}, text  # no closing ---
+        return {}, text
 
     fm_lines = lines[1:end_idx]
     body = "\n".join(lines[end_idx + 1 :]).lstrip("\n")
@@ -100,7 +102,7 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
             cur_key = key
 
             if val == "":
-                meta[key] = []  # expect list items
+                meta[key] = []
             else:
                 meta[key] = _strip_wrapping_quotes(val)
             continue
@@ -151,18 +153,49 @@ def load_parts_index(parts_dir: Path) -> dict[str, dict]:
 
 
 def claim_id(section_id: str, idx: int) -> str:
-    # stable, compact
     return f"C-{section_id}-{idx:03d}"
 
 
+def pick_doc_title(lines: list[str]) -> str:
+    for ln in lines:
+        if ln.strip():
+            return ln.strip().lstrip("#").strip() or "Dossier"
+    return "Dossier"
+
+
+def _section_fields(current_part_meta: dict | None) -> tuple[str, str, str]:
+    if current_part_meta:
+        sec_id = current_part_meta["id"]
+        sec_label = (
+            f'{current_part_meta["number"]}. {current_part_meta["title"]}'.strip()
+            if current_part_meta.get("number")
+            else current_part_meta["title"]
+        )
+        url = current_part_meta["url"]
+        return sec_id, sec_label, url
+    return "no-part", "No part", ""
+
+
+def _unique_urls(text: str) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for u in URL_RE.findall(text or ""):
+        if u not in seen:
+            seen.add(u)
+            out.append(u)
+    return out
+
+
 def render_claims_html(doc_title: str, claims: list[dict]) -> str:
-    rows = []
+    rows: list[str] = []
+
     for c in claims:
         cid = escape(c["id"])
         txt = escape(c["text"])
         sec_label = escape(c.get("section_label", ""))
         url = escape(c.get("url", ""))
         line = c.get("line", None)
+        evc = int(c.get("evidence_count", 0))
 
         where = sec_label
         if url:
@@ -182,6 +215,7 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
             f"<td style='white-space:nowrap'>{cid}</td>"
             f"<td>{txt}</td>"
             f"<td style='white-space:nowrap'>{where}</td>"
+            f"<td style='text-align:right;white-space:nowrap'>{evc}</td>"
             f"<td>{links_html}</td>"
             "</tr>"
         )
@@ -190,17 +224,29 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
         body = (
             "<table border='1' cellspacing='0' cellpadding='6' style='border-collapse:collapse;width:100%'>"
             "<thead><tr>"
-            "<th>ID</th><th>Claim</th><th>Section</th><th>Links</th>"
+            "<th>ID</th><th>Claim</th><th>Section</th><th>Evidence</th><th>Links</th>"
             "</tr></thead>"
             "<tbody>"
-            + "\n".join(rows) +
-            "</tbody></table>"
+            + "\n".join(rows)
+            + "</tbody></table>"
         )
     else:
         body = (
-            "<p>No claims found yet. Add blocks like:</p>"
-            "<pre>[CLAIM]\nYour claim text...\n[/CLAIM]</pre>"
-            "<p>Or single lines like <code>CLAIM: ...</code></p>"
+            "<p>No claims found yet.</p>"
+            "<p>Supported formats:</p>"
+            "<pre>"
+            "Some claim text. [C]\n"
+            "Evidence:\n"
+            "- https://...\n"
+            "\n"
+            "[CLAIM]\n"
+            "Claim text...\n"
+            "Evidence:\n"
+            "- https://...\n"
+            "[/CLAIM]\n"
+            "\n"
+            "CLAIM: Single line claim...\n"
+            "</pre>"
         )
 
     return f"""<!doctype html>
@@ -214,7 +260,12 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
   <nav><a href="./index.html">Index</a></nav>
   <main>
     <h1>Claims Ledger</h1>
-    <p>Claims are extracted from <code>[CLAIM]...[/CLAIM]</code> blocks and <code>CLAIM:</code> lines in the source.</p>
+    <p>Claims are extracted from:</p>
+    <ul>
+      <li>Inline claims ending with <code>[C]</code> (evidence is the lines below until a blank line)</li>
+      <li><code>[CLAIM] ... [/CLAIM]</code> blocks</li>
+      <li><code>CLAIM:</code> single lines</li>
+    </ul>
     <ul>
       <li><a href="./claims.json">claims.json</a></li>
       <li><a href="./claims.min.json">claims.min.json</a></li>
@@ -224,13 +275,6 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
 </body>
 </html>
 """
-
-
-def pick_doc_title(lines: list[str]) -> str:
-    for ln in lines:
-        if ln.strip():
-            return ln.strip().lstrip("#").strip() or "Dossier"
-    return "Dossier"
 
 
 def main(src: str, outdir: str) -> None:
@@ -243,18 +287,57 @@ def main(src: str, outdir: str) -> None:
 
     doc_title = pick_doc_title(lines)
 
-    # Find parts dir next to source.md
+    # Expect dossier/source.md next to dossier/parts
     parts_dir = src_path.parent / "parts"
     parts_index = load_parts_index(parts_dir)
 
     claims: list[dict] = []
     claims_min: list[dict] = []
-
-    # counts per section id
     section_counts: dict[str, int] = {}
 
     current_part_name: str | None = None
     current_part_meta: dict | None = None
+
+    def push_claim(
+        *,
+        claim_text: str,
+        evidence_text: str,
+        line_no: int,
+    ) -> None:
+        nonlocal claims, claims_min, section_counts, current_part_meta
+
+        sec_id, sec_label, url = _section_fields(current_part_meta)
+
+        section_counts.setdefault(sec_id, 0)
+        section_counts[sec_id] += 1
+        cid = claim_id(sec_id, section_counts[sec_id])
+
+        links = _unique_urls(evidence_text if evidence_text else claim_text)
+        evidence_count = len(links)
+
+        claims.append(
+            {
+                "id": cid,
+                "text": claim_text.strip(),
+                "evidence": evidence_text.strip(),
+                "evidence_count": evidence_count,
+                "links": links,
+                "section_id": sec_id,
+                "section_label": sec_label,
+                "url": url,
+                "line": line_no,
+            }
+        )
+
+        # no-links skim: no evidence URLs, only count
+        claims_min.append(
+            {
+                "id": cid,
+                "u": url,                       # section page url
+                "t": " ".join(claim_text.split()),
+                "ec": evidence_count,
+            }
+        )
 
     i = 0
     while i < len(lines):
@@ -267,117 +350,76 @@ def main(src: str, outdir: str) -> None:
             i += 1
             continue
 
-        # Block claim
+        # 1) Block claim
         if CLAIM_BLOCK_START_RE.match(line):
-            block_lines: list[str] = []
             start_line_no = i + 1
-
+            block_lines: list[str] = []
             i += 1
             while i < len(lines) and not CLAIM_BLOCK_END_RE.match(lines[i]):
                 block_lines.append(lines[i])
                 i += 1
-
-            # consume closing tag if present
             if i < len(lines) and CLAIM_BLOCK_END_RE.match(lines[i]):
                 i += 1
 
             claim_text = "\n".join(block_lines).strip()
             if claim_text:
-                # Map to section via current part
-                if current_part_meta:
-                    sec_id = current_part_meta["id"]
-                    sec_label = (
-                        f'{current_part_meta["number"]}. {current_part_meta["title"]}'.strip()
-                        if current_part_meta.get("number")
-                        else current_part_meta["title"]
-                    )
-                    url = current_part_meta["url"]
-                else:
-                    sec_id = "no-part"
-                    sec_label = "No part"
-                    url = ""
-
-                section_counts.setdefault(sec_id, 0)
-                section_counts[sec_id] += 1
-                cid = claim_id(sec_id, section_counts[sec_id])
-
-                links = URL_RE.findall(claim_text)
-
-                claims.append(
-                    {
-                        "id": cid,
-                        "text": claim_text,
-                        "section_id": sec_id,
-                        "section_label": sec_label,
-                        "url": url,
-                        "line": start_line_no,
-                        "links": links,
-                    }
-                )
-                claims_min.append(
-                    {
-                        "id": cid,
-                        "u": url,
-                        "t": " ".join(claim_text.split()),
-                    }
-                )
+                # For blocks, evidence is inside the block, so keep it in evidence field too.
+                # This makes the ledger consistent.
+                push_claim(claim_text=claim_text, evidence_text=claim_text, line_no=start_line_no)
             continue
 
-        # Single-line claim
+        # 2) Inline [C] suffix claim
+        m_c = C_SUFFIX_RE.match(line)
+        if m_c:
+            start_line_no = i + 1
+            claim_text = m_c.group(1).strip()
+
+            # Evidence is the following lines until a blank line.
+            # Safety stop: if a new claim begins before a blank line, stop there too.
+            evidence_lines: list[str] = []
+            i += 1
+            while i < len(lines):
+                nxt = lines[i]
+                if nxt.strip() == "":
+                    break
+                if CLAIM_BLOCK_START_RE.match(nxt) or CLAIM_LINE_RE.match(nxt) or C_SUFFIX_RE.match(nxt):
+                    break
+                evidence_lines.append(nxt.rstrip())
+                i += 1
+
+            # consume optional blank line
+            if i < len(lines) and lines[i].strip() == "":
+                i += 1
+
+            evidence_text = "\n".join(evidence_lines).strip()
+            if claim_text:
+                push_claim(claim_text=claim_text, evidence_text=evidence_text, line_no=start_line_no)
+            continue
+
+        # 3) Single-line CLAIM: or [CLAIM] text
         m_line = CLAIM_LINE_RE.match(line)
         if m_line:
+            start_line_no = i + 1
             claim_text = m_line.group(1).strip()
             if claim_text:
-                if current_part_meta:
-                    sec_id = current_part_meta["id"]
-                    sec_label = (
-                        f'{current_part_meta["number"]}. {current_part_meta["title"]}'.strip()
-                        if current_part_meta.get("number")
-                        else current_part_meta["title"]
-                    )
-                    url = current_part_meta["url"]
-                else:
-                    sec_id = "no-part"
-                    sec_label = "No part"
-                    url = ""
-
-                section_counts.setdefault(sec_id, 0)
-                section_counts[sec_id] += 1
-                cid = claim_id(sec_id, section_counts[sec_id])
-
-                links = URL_RE.findall(claim_text)
-
-                claims.append(
-                    {
-                        "id": cid,
-                        "text": claim_text,
-                        "section_id": sec_id,
-                        "section_label": sec_label,
-                        "url": url,
-                        "line": i + 1,
-                        "links": links,
-                    }
-                )
-                claims_min.append(
-                    {
-                        "id": cid,
-                        "u": url,
-                        "t": claim_text,
-                    }
-                )
-
+                push_claim(claim_text=claim_text, evidence_text="", line_no=start_line_no)
             i += 1
             continue
 
         i += 1
 
-    # Write outputs
-    (out / "claims.json").write_text(json.dumps(claims, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "claims.json").write_text(
+        json.dumps(claims, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     (out / "claims.min.json").write_text(
         json.dumps(claims_min, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
-    (out / "claims.html").write_text(render_claims_html(doc_title, claims), encoding="utf-8")
+    (out / "claims.html").write_text(
+        render_claims_html(doc_title, claims),
+        encoding="utf-8",
+    )
 
     print(f"Wrote {out / 'claims.json'} ({len(claims)} claims)")
     print(f"Wrote {out / 'claims.min.json'} ({len(claims_min)} claims)")
