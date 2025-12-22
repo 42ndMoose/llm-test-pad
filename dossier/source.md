@@ -123,8 +123,6 @@ Trump’s economic line, and the Vance wing around him, is a break from that scr
 
 <!-- BEGIN 02-ownership-layer.md -->
 
-2.	Ownership layer: Big Three and legacy media
-
 The “Big Three” asset managers are:
 	•	BlackRock
 	•	Vanguard
