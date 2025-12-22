@@ -124,134 +124,131 @@ Trump’s economic line, and the Vance wing around him, is a break from that scr
 <!-- BEGIN 02-ownership-layer.md -->
 
 The “Big Three” asset managers are:
-	•	BlackRock
-	•	Vanguard
-	•	State Street
+- BlackRock
+- Vanguard
+- State Street
+
+They run massive index funds and hold large positions across a huge slice of U.S. public equities, including major media parents.
 
 [CLAIM]
 BlackRock, Vanguard, and State Street are commonly referred to as the “Big Three” U.S. asset managers in the context of index-fund and institutional ownership concentration.
 Evidence:
-- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3126067
+- Research reference (academic): “The Hidden Power of the Big Three? Passive index funds, re-concentration of corporate ownership, and new financial risk” (Fichtner / Heemskerk / Garcia-Bernardo). (Add your preferred canonical link; avoid SSRN mirrors if they keep disappearing.)
 [/CLAIM]
-
-They run massive index funds and own large pieces of almost every major U.S. public company, including the parents of major news outlets.
 
 [CLAIM]
-Vanguard, BlackRock, and State Street frequently appear among the largest institutional holders across many S&P 500 companies due to broad index-fund ownership and related institutional positions.
+Vanguard, BlackRock, and State Street frequently show up as top institutional holders across many large-cap issuers because broad index funds and related mandates force them to own “the market” in size.
 Verification paths:
-- SEC EDGAR 13F filings (search by manager name + form “13F-HR”): https://www.sec.gov/edgar/search/
-- https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3126067
+- SEC EDGAR 13F-HR filings (Vanguard / BlackRock entities / State Street entities)
+- Proxy statements (DEF 14A) for issuer-side “beneficial owners” tables (often lists Vanguard/BlackRock when >5%)
 [/CLAIM]
 
-2.1 TV news parents and who holds them
+---
 
-Comcast (NBC / MSNBC / CNBC)
+## 2.1 TV news parents and who holds them
+
+### Comcast (NBC / MSNBC / CNBC)
+
 Parent of NBC News, MSNBC, CNBC.
-	•	Top institutional holders:
-	•	Vanguard Group,
-	•	BlackRock,
-	•	State Street Corp,
-all near the top of the shareholder list for Comcast common stock.
 
 [CLAIM]
-For Comcast (CMCSA), the SEC proxy statement (DEF 14A) lists major beneficial owners, which commonly includes large institutions like Vanguard/BlackRock/State Street when they cross reporting thresholds (check the “Security Ownership…” section; use the “As of” date inside the filing).
-Links:
-- https://www.sec.gov/Archives/edgar/data/1166691/000119312525075818/d803818ddef14a.htm
-- SEC filing list (DEF 14A filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=CMCSA&type=DEF%2014A&count=40&owner=exclude
+Comcast’s proxy filings typically list large institutional holders (often including Vanguard and BlackRock) in the “beneficial ownership” section when they exceed reporting thresholds.
+Evidence (primary):
+- Comcast DEF 14A filing index (example): https://www.sec.gov/Archives/edgar/data/1166691/000119312521080275/0001193125-21-080275-index.html
+Notes:
+- If you want “top holders including State Street even below 5%,” pair the proxy with 13F (holder-side) checks.
 [/CLAIM]
 
-Disney (ABC, ESPN, etc.)
-	•	Owns ABC News, ESPN, Disney+, etc.
-	•	Its largest institutional shareholders are:
-	•	Vanguard,
-	•	BlackRock,
-	•	State Street (plus a couple of big active managers), which collectively hold a double-digit chunk of the float.
+### Disney (ABC, ESPN, etc.)
+
+Owns ABC News, ESPN, Disney+, etc.
 
 [CLAIM]
-For Disney (DIS), the SEC proxy statement (DEF 14A) includes a beneficial ownership table/section that can be used to verify major holders and their reported % (use the “As of” date inside the filing).
-Links:
-- https://www.sec.gov/Archives/edgar/data/1744489/000095015724000122/dis-20240201.htm
-- SEC filing list (DEF 14A filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=DIS&type=DEF%2014A&count=40&owner=exclude
+Disney’s proxy filings provide issuer-side beneficial ownership disclosure, which is a clean primary-source checkpoint for major holders and voting structure disclosures.
+Evidence (primary):
+- Disney DEF 14A filing index (example): https://www.sec.gov/Archives/edgar/data/1744489/000119312522170326/0001193125-22-170326-index.html
 [/CLAIM]
 
 [CLAIM]
-For Disney (DIS), the combined positions of Vanguard + BlackRock + State Street represent a double-digit percentage of shares outstanding (check date: use the “As of” date inside the proxy statement’s beneficial owner table; add the listed % values for the three institutions).
+On many large issuers, Vanguard + BlackRock + State Street can add up to a double-digit economic stake when you total their reported positions.
+Evidence (how to verify cleanly):
+- Use SEC 13F filings for each manager entity and sum positions for the issuer’s CUSIP
+- Or use a reputable ownership table, then capture the math in your own note (screenshot + date)
+[/CLAIM]
+
+### Warner Bros. Discovery (CNN)
+
+Parent of CNN, HBO, etc.
+
+[CLAIM]
+Warner Bros. Discovery filings can be verified the same way: issuer proxy (DEF 14A) for beneficial owners, then 13F checks for the “full institutional stack.”
 Evidence:
-- https://www.sec.gov/Archives/edgar/data/1744489/000095015724000122/dis-20240201.htm
+- WBD DEF 14A (example mirror; replace with your preferred SEC index if you want zero third-party reliance):
+  - EDGAR-online mirror: https://content.edgar-online.com/ExternalLink/EDGAR/0001437107-24-000102.html?dest=wbd-20240419_htm&hash=41fd5a78752d62e5c8afa7b2724a4b3707fe1da4aa962bec17ae10fece022095
+- WBD SEC filing example (Rule 14a-12 filing hosted on SEC, confirms the issuer + filing pipeline is active):
+  - https://www.sec.gov/Archives/edgar/data/1437107/000110465925122775/tm2533570d12_dfan14a.htm
+TODO:
+- Swap in a direct SEC “-index.html” for the latest WBD DEF 14A once you pick the specific accession you want to pin.
 [/CLAIM]
 
-Warner Bros. Discovery (CNN)
-	•	Parent of CNN, HBO, etc.
-	•	Vanguard and BlackRock show up as top holders, State Street is also among the leading institutional shareholders.
+### Fox Corporation (Fox News Channel)
+
+Parent of Fox News Channel and Fox broadcast network.
 
 [CLAIM]
-For Warner Bros. Discovery (WBD), use the SEC proxy statement (DEF 14A) “Security Ownership…” section to verify whether Vanguard/BlackRock/State Street are listed as major beneficial owners (and the “As of” date used).
-Links:
-- SEC filing list (DEF 14A filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=WBD&type=DEF%2014A&count=40&owner=exclude
-[/CLAIM]
-
-Fox Corporation (Fox News Channel)
-	•	Parent of Fox News Channel and Fox broadcast network.
-	•	Dual-class structure lets the Murdoch family trust retain control, but among freely traded Class A shares, Vanguard, BlackRock, and State Street sit near the top of the institutional stack.
-
-[CLAIM]
-Fox Corporation uses a dual-class share structure where insiders retain voting control via high-vote shares (verify in the most recent proxy statement / annual filing; look for the “Class A / Class B” voting rights language).
-Links:
-- SEC filing list (DEF 14A filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=FOXA&type=DEF%2014A&count=40&owner=exclude
-- SEC filing list (10-K filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=FOXA&type=10-K&count=40&owner=exclude
+Fox Corporation uses a dual-class share structure that concentrates voting control (so economic ownership does not equal control).
+Evidence (primary):
+- Fox proxy statement (DEF 14A) that discusses voting/control mechanics (example): https://www.sec.gov/Archives/edgar/data/1754301/000119312522228381/d220535ddef14a.htm
 [/CLAIM]
 
 [CLAIM]
-For Fox Corporation Class A (FOXA), use the SEC proxy statement and/or institutional 13F paths to verify Vanguard/BlackRock/State Street ownership of the traded class.
-Links:
-- SEC filing list (DEF 14A filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=FOXA&type=DEF%2014A&count=40&owner=exclude
+Institutional holders of the traded class can be checked via:
+- issuer proxy tables (beneficial owners over thresholds)
+- holder-side 13F filings (Vanguard / BlackRock entities / State Street entities)
+Evidence:
+- Same Fox DEF 14A link above + 13F cross-checks for the “top institutional holders” list.
 [/CLAIM]
 
-Sinclair Broadcast Group (local TV)
-	•	Owns and operates a large network of local TV stations carrying ABC / NBC / CBS / Fox branding.
-	•	Known for a more conservative or pro-GOP editorial flavor.
-	•	Once again, Vanguard and BlackRock are key institutional shareholders.
+### Sinclair Broadcast Group (local TV)
+
+Owns and operates a large network of local TV stations carrying ABC / NBC / CBS / Fox branding.
 
 [CLAIM]
-Sinclair Broadcast Group owns and operates many local TV stations (verify via Sinclair corporate/investor materials).
-Links:
-- https://sbgi.net/
-- https://sbgi.net/about/
+Sinclair operates a large group of local TV stations (issuer filings and company profile pages state this directly).
+Evidence (primary options):
+- Sinclair SEC filings (use latest 10-K “Business” section) via SEC EDGAR by CIK (SBGI)
+TODO:
+- Add a pinned SEC 10-K “-index.html” link for Sinclair once you choose the specific filing you want to reference.
 [/CLAIM]
 
 [CLAIM]
-For Sinclair (SBGI), use the SEC proxy statement (DEF 14A) and 13F paths to verify major institutional holders.
-Links:
-- SEC filing list (DEF 14A filter): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=SBGI&type=DEF%2014A&count=40&owner=exclude
-[/CLAIM]
-
-2.2 The zoomed-out pattern
-
-Across the S&P 500:
-	•	Vanguard and BlackRock are among the top few institutional shareholders in a huge majority of companies, State Street often joins them.
-	•	In media, you repeatedly see the same trio on the cap table:
-	•	Comcast (NBC/MSNBC),
-	•	Disney (ABC),
-	•	Warner Bros. Discovery (CNN),
-	•	Fox Corp / News Corp (Fox News, WSJ),
-	•	Sinclair and others.
-
-[CLAIM]
-Across major U.S. public companies (including major media parents), Vanguard and BlackRock often appear among top institutional holders, with State Street frequently also near the top (verify with SEC proxy statements for issuer-level “beneficial owner” disclosures + SEC EDGAR 13F filings for manager-level holdings).
+Institutional holders for Sinclair can be verified via 13F (holder-side) and proxy disclosures (issuer-side).
 Verification paths:
-- SEC issuer proxy statements (DEF 14A) per ticker (EDGAR browse links above)
-- SEC EDGAR 13F filings (manager-level; search by manager name + “13F-HR”): https://www.sec.gov/edgar/search/
-- Research context (“Giant Three” / common ownership discussion): https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3126067
+- SEC EDGAR 13F-HR filings (Vanguard / BlackRock entities / State Street entities)
+- Sinclair DEF 14A / 10-K ownership disclosures
+[/CLAIM]
+
+---
+
+## 2.2 The zoomed-out pattern
+
+Across major U.S. public companies (including major media parents), Vanguard and BlackRock routinely show up as top institutional holders, with State Street frequently also near the top.
+
+[CLAIM]
+This pattern is reproducible across tickers: check issuer proxies for >5% beneficial owners, then use manager-side SEC 13F filings to see the broader institutional ranking (including large holders below 5%).
+Verification paths:
+- SEC EDGAR 13F-HR filings
+- Issuer DEF 14A “beneficial owners” tables
 [/CLAIM]
 
 Key point:
-	•	The Big Three do not own everything, and they cannot override dual-class insiders like the Murdochs.
-	•	But they are anchor tenants in the ownership stack of most major media conglomerates.
+- The Big Three do not “own everything,” and they cannot override dual-class insiders when insiders control votes.
+- But they are often anchor tenants in the economic ownership layer across much of corporate America.
 
 [CLAIM]
-Dual-class share structures can let insiders retain voting control even when large institutional investors hold significant economic ownership (verify with proxy statements / governance disclosures; then compare to a general governance explainer if you want).
-Evidence:
-- https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=FOXA&type=DEF%2014A&count=40&owner=exclude
+Dual-class share structures can let insiders retain voting control even when large institutions hold significant economic ownership.
+Evidence (primary):
+- Any issuer proxy (DEF 14A) that explains its class voting rights (Fox is a clean example; link above)
 [/CLAIM]
 
 <!-- END 02-ownership-layer.md -->
