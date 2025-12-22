@@ -1,6 +1,4 @@
 Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
-
-
 <!-- BEGIN 00-start-here.md -->
 
 # Start Here
@@ -16,10 +14,9 @@ This is a living dossier of documented events, institutional links, and incentiv
 - TOC: `/dossier/site/index.html`
 - Claims Ledger: `/dossier/site/claims.html` (if present)
 
-
 <!-- END 00-start-here.md -->
 
-
+⸻
 
 <!-- BEGIN 03-ownership-layer.md -->
 
@@ -77,10 +74,9 @@ Key point:
 	•	The Big Three do not own everything, and they cannot override dual-class insiders like the Murdochs.
 	•	But they are anchor tenants in the ownership stack of most major media conglomerates.
 
-
 <!-- END 03-ownership-layer.md -->
 
-
+⸻
 
 <!-- BEGIN 00-political-context.md -->
 
@@ -135,10 +131,9 @@ Underneath all the noise, the same incentive architecture runs three main agenda
 
 The later sections track how Trump 2.0 and DOGE are hitting each pillar, and how the opposing bloc uses the same machine to resist.
 
-
 <!-- END 00-political-context.md -->
 
-
+⸻
 
 <!-- BEGIN 02-elite-civil-war.md -->
 
@@ -187,10 +182,9 @@ Trump’s economic line, and the Vance wing around him, is a break from that scr
 	•	Tariffs, onshoring incentives, and tighter immigration rules are an attempt to flip the incentive structure so that closing a plant in Ohio and opening one in Guangdong is punished instead of rewarded.
 	•	That puts the America First bloc not only against Davos and WEF, but also against the comfortable Wall Street model that treats the U.S. workforce as just another variable cost.
 
-
 <!-- END 02-elite-civil-war.md -->
 
-
+⸻
 
 <!-- BEGIN 10-main.md -->
 
@@ -1079,6 +1073,5 @@ fighting over how the machine is used.
 The underlying structure stays in place until its incentive architecture is fundamentally changed.
 
 The goal is not “no left, only right.” The goal is that one side does not own the refs. Right now the system is tilted hard in one direction. The point of all this is to drag it back to a space where both sides can actually fight fair.
-
 
 <!-- END 10-main.md -->
