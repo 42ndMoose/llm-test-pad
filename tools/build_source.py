@@ -35,7 +35,7 @@ def parse_front_matter(text: str) -> tuple[dict, str]:
         return {}, text  # no closing ---
 
     fm_lines = lines[1:end_idx]
-    body = "\n".join(lines[end_idx + 1:]).lstrip("\n")
+    body = "\n".join(lines[end_idx + 1 :]).lstrip("\n")
 
     meta: dict = {}
     cur_key: str | None = None
@@ -90,10 +90,7 @@ def main() -> None:
         order = meta.get("order", "999999")
         title = meta.get("title", p.stem)
 
-        # strip YAML (done) + normalize body
         body = norm_ws(body)
-
-        # skip empty bodies
         if not body.strip():
             continue
 
@@ -110,17 +107,21 @@ def main() -> None:
     parts.sort(key=lambda x: (x["order"], x["path"].name))
 
     chunks: list[str] = []
-    # Optional: ensure a single consistent title at the top
     chunks.append(DOC_TITLE.strip() + "\n")
 
-    for item in parts:
+    # IMPORTANT:
+    # We insert a divider BETWEEN parts for readability and for the single-file splitter heuristic.
+    # We keep BEGIN/END markers too, but the splitter will ignore them when checking "previous line".
+    for idx, item in enumerate(parts):
         p = item["path"]
         body = item["body"]
 
-        header = f"\n\n<!-- BEGIN {p.name} -->\n\n"
-        footer = f"\n\n<!-- END {p.name} -->\n\n"
+        if idx > 0:
+            chunks.append("\n⸻\n\n")
 
-        chunks.append(header + body + footer)
+        chunks.append(f"<!-- BEGIN {p.name} -->\n\n")
+        chunks.append(body)
+        chunks.append(f"\n<!-- END {p.name} -->\n")
 
     OUT_FILE.write_text("".join(chunks).strip() + "\n", encoding="utf-8")
     print(f"Wrote {OUT_FILE} from {len(parts)} part(s).")
