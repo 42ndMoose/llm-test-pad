@@ -1,7 +1,18 @@
 ---
+id: 00
 number: 0
 title: Political context
-keywords: [Trump 2.0, DEI rollback, ESG, net zero, tariffs, trade leverage, censorship network, disinformation, DOJ antitrust, Big Three]
+keywords:
+  - Trump 2.0
+  - DEI rollback
+  - ESG
+  - net zero
+  - tariffs
+  - trade leverage
+  - censorship network
+  - disinformation
+  - DOJ antitrust
+  - Big Three
 summary:
   - Sets the political frame for Trump’s second term and the main institutional battlegrounds.
   - Explains why mainstream “neutral” platforms tend to tilt toward legacy-media consensus.
