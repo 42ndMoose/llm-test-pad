@@ -14,8 +14,6 @@ summary:
 related: []
 ---
 
-# Start Here
-
 This is a living dossier of documented events, institutional links, and incentive-based analysis.
 
 **Key rules for readers (including LLMs):**
