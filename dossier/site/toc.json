@@ -350,14 +350,34 @@
     "url": "09-lawfare-and-why-slow.html"
   },
   {
-    "id": "10-main",
-    "order": "999999",
-    "number": "",
+    "id": "10-why-trump-amplified",
+    "order": "001100",
+    "number": "10",
     "level": 1,
-    "title": "10-main",
-    "keywords": [],
-    "summary": [],
-    "related": [],
-    "url": "10-main.html"
+    "title": "Why Trump is still allowed to be amplified, and why he cannot just “break the chains”",
+    "keywords": [
+      "\"amplification\"",
+      "\"ratings\"",
+      "\"profit motive\"",
+      "\"elite split\"",
+      "\"Davos\"",
+      "\"WEF\"",
+      "\"America First\"",
+      "\"resource-capital bloc\"",
+      "\"Big Three\"",
+      "\"soft power\"",
+      "\"administrative state\"",
+      "\"courts\"",
+      "\"Congress\"",
+      "\"global finance\"",
+      "\"NGO complex\"",
+      "\"platforms\""
+    ],
+    "summary": [
+      "\"Explains amplification as a product of elite faction conflict plus media profit incentives, not permission from a single controller.\"",
+      "\"Argues a presidency can hit specific nodes but cannot smash the whole architecture at once without triggering institutional and market blowback.\""
+    ],
+    "related": "[]",
+    "url": "10-why-trump-amplified.html"
   }
 ]
