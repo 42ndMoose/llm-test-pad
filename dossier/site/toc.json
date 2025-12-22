@@ -246,6 +246,35 @@
     "url": "06-big-three-esg-wef-overlay.html"
   },
   {
+    "id": "07-why-narratives-line-up",
+    "order": "000800",
+    "number": "7",
+    "level": 1,
+    "title": "Why narratives line up without a single boss",
+    "keywords": [
+      "\"incentives\"",
+      "\"compliance regime\"",
+      "\"regulators\"",
+      "\"NGO hubs\"",
+      "\"academic hubs\"",
+      "\"brand safety\"",
+      "\"advertisers\"",
+      "\"index-fund stewardship\"",
+      "\"WEF ideology\"",
+      "\"platform integrity\"",
+      "\"downranking\"",
+      "\"labels\"",
+      "\"demonetization\"",
+      "\"deplatforming\""
+    ],
+    "summary": [
+      "\"Argues that aligned incentives across regulators, NGOs, advertisers, investors, and platforms can standardize narratives without a central controller.\"",
+      "\"Presents a five-layer stack that explains convergence in executive decision-making.\""
+    ],
+    "related": "[]",
+    "url": "07-why-narratives-line-up.html"
+  },
+  {
     "id": "10-main",
     "order": "999999",
     "number": "",
