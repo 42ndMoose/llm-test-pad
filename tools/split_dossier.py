@@ -16,6 +16,11 @@ NUM_HEADING_RE = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
 MD_HEADING_RE = re.compile(r"^\s*(#{1,6})\s+(.+?)\s*$")
 DIVIDER_RE = re.compile(r"^\s*(?:⸻+|[-_]{3,}|={3,})\s*$")
 
+# Claim stripping (for clean human pages)
+CLAIM_BLOCK_START_RE = re.compile(r"^\s*(?:[-*]\s*)?\[(?i:claim)\]\s*$")
+CLAIM_BLOCK_END_RE = re.compile(r"^\s*\[/(?i:claim)\]\s*$")
+CLAIM_LINE_RE = re.compile(r"^\s*(?:[-*]\s*)?(?:\[(?i:claim)\]\s*|(?i:claim)\s*:\s*).+?\s*$")
+
 
 @dataclass
 class Heading:
@@ -41,6 +46,33 @@ def file_name_from_heading(h: Heading) -> str:
     return f"{slugify(h.title)}.html"
 
 
+def strip_claims(text: str) -> str:
+    """
+    Remove claim markers/blocks from the text that gets rendered to human-facing pages.
+    Keeps the source clean for extraction but avoids clutter in HTML pages.
+    """
+    lines = text.splitlines()
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        if CLAIM_BLOCK_START_RE.match(lines[i]):
+            i += 1
+            while i < len(lines) and not CLAIM_BLOCK_END_RE.match(lines[i]):
+                i += 1
+            if i < len(lines) and CLAIM_BLOCK_END_RE.match(lines[i]):
+                i += 1
+            continue
+
+        if CLAIM_LINE_RE.match(lines[i]):
+            i += 1
+            continue
+
+        out.append(lines[i])
+        i += 1
+
+    return "\n".join(out).strip() + "\n"
+
+
 def is_ignorable_line(s: str) -> bool:
     # ignore build_source markers when looking for dividers
     return s.startswith("<!--") and s.endswith("-->")
@@ -63,7 +95,7 @@ def detect_headings(lines: list[str]) -> list[Heading]:
         m = NUM_HEADING_RE.match(line)
         if m:
             number, title = m.group(1), m.group(2)
-            level = 1  # you currently split only on top-level numeric headings
+            level = 1  # split only on top-level numeric headings by default
 
             prev_i, prev = prev_significant(lines, i)
 
@@ -74,7 +106,16 @@ def detect_headings(lines: list[str]) -> list[Heading]:
                     continue
 
             cut_before = prev_i if (prev_i is not None and DIVIDER_RE.match(prev)) else None
-            heads.append(Heading(kind="num", number=number, level=level, title=title, line_index=i, cut_before=cut_before))
+            heads.append(
+                Heading(
+                    kind="num",
+                    number=number,
+                    level=level,
+                    title=title,
+                    line_index=i,
+                    cut_before=cut_before,
+                )
+            )
             continue
 
         m = MD_HEADING_RE.match(line)
@@ -209,7 +250,14 @@ def render_index(doc_title: str, toc_entries: list[dict]) -> str:
     return "\n".join(html_parts)
 
 
-def render_page(doc_title: str, page_title: str, body_text: str, meta: dict, prev_url: str | None, next_url: str | None) -> str:
+def render_page(
+    doc_title: str,
+    page_title: str,
+    body_text: str,
+    meta: dict,
+    prev_url: str | None,
+    next_url: str | None,
+) -> str:
     nav_bits = ['<a href="./index.html">Index</a>']
     if prev_url:
         nav_bits.append(f'<a href="./{escape(prev_url)}">Prev</a>')
@@ -287,7 +335,8 @@ def build_from_parts(parts_dir: Path, outdir: Path, doc_title: str) -> None:
         m = it["meta"]
         page_title = f'{m["number"]}. {m["title"]}'.strip(". ").strip() if m["number"] else m["title"]
 
-        html = render_page(doc_title, page_title, it["body"], m, prev_url, next_url)
+        clean_body = strip_claims(it["body"])
+        html = render_page(doc_title, page_title, clean_body, m, prev_url, next_url)
         (outdir / m["url"]).write_text(html, encoding="utf-8")
 
     toc_entries = [it["meta"] for it in items]
@@ -311,7 +360,8 @@ def build_from_single_file(src_path: Path, outdir: Path) -> None:
     heads = detect_headings(lines)
 
     if not heads:
-        html = render_page(doc_title, "Full Document", text, {}, None, None)
+        clean_text = strip_claims(text)
+        html = render_page(doc_title, "Full Document", clean_text, {}, None, None)
         (outdir / "full.html").write_text(html, encoding="utf-8")
         idx = render_index(doc_title, [{"level": 1, "title": "Full Document", "number": "", "url": "full.html"}])
         (outdir / "index.html").write_text(idx, encoding="utf-8")
@@ -343,6 +393,7 @@ def build_from_single_file(src_path: Path, outdir: Path) -> None:
 
         end = section_end_index(heads, i, len(lines))
         body = "\n".join(lines[h.line_index:end]).strip() + "\n"
+        clean_body = strip_claims(body)
 
         title_bits = []
         if h.kind == "num":
@@ -350,7 +401,7 @@ def build_from_single_file(src_path: Path, outdir: Path) -> None:
         title_bits.append(h.title)
         page_title = " ".join(title_bits).strip()
 
-        html = render_page(doc_title, page_title, body, {}, prev_url, next_url)
+        html = render_page(doc_title, page_title, clean_body, {}, prev_url, next_url)
         (outdir / fn).write_text(html, encoding="utf-8")
 
     (outdir / "index.html").write_text(render_index(doc_title, entries), encoding="utf-8")
