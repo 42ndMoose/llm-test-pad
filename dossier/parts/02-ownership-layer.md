@@ -1,44 +1,37 @@
 ---
-id: 02-ownership-layer
-order: "000200"
+id: "02-ownership-layer"
+order: "000300"
 number: "2"
 level: 1
-title: Ownership layer: Big Three and legacy media
+title: "Ownership layer: Big Three and legacy media"
 keywords:
-  - Big Three
-  - BlackRock
-  - Vanguard
-  - State Street
-  - institutional ownership
-  - index funds
-  - Comcast
-  - NBC
-  - MSNBC
-  - CNBC
-  - Disney
-  - ABC
-  - ESPN
-  - Warner Bros. Discovery
-  - CNN
-  - Fox Corporation
-  - Sinclair
-  - dual-class shares
+  - "Big Three"
+  - "BlackRock"
+  - "Vanguard"
+  - "State Street"
+  - "institutional ownership"
+  - "index funds"
+  - "Comcast"
+  - "NBC"
+  - "MSNBC"
+  - "CNBC"
+  - "Disney"
+  - "ABC"
+  - "ESPN"
+  - "Warner Bros. Discovery"
+  - "CNN"
+  - "Fox Corporation"
+  - "Sinclair"
+  - "dual-class shares"
 summary:
-  - Shows how the Big Three appear as major institutional holders across media parent companies.
-  - Clarifies the difference between ownership influence and day-to-day editorial control.
+  - "Shows how the Big Three appear as major institutional holders across media parent companies."
+  - "Clarifies the difference between ownership influence and day-to-day editorial control."
 related: []
 verification:
-  - Institutional holders: company IR ownership page
-  - Institutional holders: Nasdaq institutional holdings page for ticker
-  - Institutional holders: SEC 13F (Vanguard/BlackRock/State Street)
-tickers:
-  - CMCSA
-  - DIS
-  - WBD
-  - FOXA
-  - SBGI
+  - "Institutional holders: company investor relations ownership page"
+  - "Institutional holders: Nasdaq institutional holdings page for the ticker"
+  - "Institutional holders: SEC 13F filings for Vanguard/BlackRock/State Street"
 ---
-
 
 2.	Ownership layer: Big Three and legacy media
 
