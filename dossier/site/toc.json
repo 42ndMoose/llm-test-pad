@@ -111,6 +111,38 @@
     "url": "02-ownership-layer.html"
   },
   {
+    "id": "03-big-three-wef-davos",
+    "order": "000400",
+    "number": "3",
+    "level": 1,
+    "title": "Big Three + WEF / Davos",
+    "keywords": [
+      "\"Big Three\"",
+      "\"WEF\"",
+      "\"Davos\"",
+      "\"BlackRock\"",
+      "\"Vanguard\"",
+      "\"State Street\"",
+      "\"Larry Fink\"",
+      "\"World Economic Forum partner\"",
+      "\"Global Parity Alliance\"",
+      "\"ESG\"",
+      "\"DEI\"",
+      "\"net zero\"",
+      "\"NZAM\"",
+      "\"Climate Action 100+\"",
+      "\"Mark Carney\"",
+      "\"Brookfield\"",
+      "\"UN climate finance\""
+    ],
+    "summary": [
+      "\"Connects the Big Three ownership layer to WEF/Davos governance networks and ESG coordination.\"",
+      "\"Adds a Canada-facing node by framing Mark Carney as a political expression of the same climate-finance ecosystem.\""
+    ],
+    "related": "[]",
+    "url": "03-big-three-wef-davos.html"
+  },
+  {
     "id": "10-main",
     "order": "999999",
     "number": "",
