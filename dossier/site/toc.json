@@ -1,7 +1,25 @@
 [
   {
-    "id": "00-political-context",
+    "id": "00-start-here",
     "order": "000000",
+    "number": "",
+    "level": 1,
+    "title": "Start Here",
+    "keywords": [
+      "\"navigation\"",
+      "\"toc\"",
+      "\"how to use\""
+    ],
+    "summary": [
+      "\"Landing page for humans and LLMs.\"",
+      "\"Explains how to navigate and how to interpret sections.\""
+    ],
+    "related": "[]",
+    "url": "00-start-here.html"
+  },
+  {
+    "id": "00-political-context",
+    "order": "000100",
     "number": "0",
     "level": 1,
     "title": "Political context",
@@ -24,24 +42,6 @@
     ],
     "related": "[]",
     "url": "00-political-context.html"
-  },
-  {
-    "id": "00-start-here",
-    "order": "000000",
-    "number": "",
-    "level": 1,
-    "title": "Start Here",
-    "keywords": [
-      "\"navigation\"",
-      "\"toc\"",
-      "\"how to use\""
-    ],
-    "summary": [
-      "\"Landing page for humans and LLMs.\"",
-      "\"Explains how to navigate and how to interpret sections.\""
-    ],
-    "related": "[]",
-    "url": "00-start-here.html"
   },
   {
     "id": "01-elite-civil-war",
