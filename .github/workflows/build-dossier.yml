@@ -29,17 +29,14 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Ensure output folder exists
-          mkdir -p dossier/site
+          # Ensure output + assets exist
+          mkdir -p dossier/site/assets
 
           # Delete generated HTML/JSON under dossier/site,
-          # but KEEP dossier/site/assets (for PDFs/images/etc.)
-          find dossier/site \
-            -path dossier/site/assets -prune -o \
-            -type f \( -name "*.html" -o -name "*.json" \) -print -delete
-
-          # Ensure assets folder exists (optional, but nice)
-          mkdir -p dossier/site/assets
+          # but KEEP anything inside dossier/site/assets/
+          find dossier/site -type f \( -name "*.html" -o -name "*.json" \) \
+            ! -path "dossier/site/assets/*" \
+            -delete
 
       - name: Split dossier into pages
         run: |
