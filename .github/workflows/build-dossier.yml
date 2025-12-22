@@ -25,10 +25,21 @@ jobs:
         run: |
           python tools/build_source.py
 
-      - name: Clean output folder
+      - name: Clean output folder (keep assets)
         run: |
-          rm -rf dossier/site/*
+          set -euo pipefail
+
+          # Ensure output folder exists
           mkdir -p dossier/site
+
+          # Delete generated HTML/JSON under dossier/site,
+          # but KEEP dossier/site/assets (for PDFs/images/etc.)
+          find dossier/site \
+            -path dossier/site/assets -prune -o \
+            -type f \( -name "*.html" -o -name "*.json" \) -print -delete
+
+          # Ensure assets folder exists (optional, but nice)
+          mkdir -p dossier/site/assets
 
       - name: Split dossier into pages
         run: |
