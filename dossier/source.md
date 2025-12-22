@@ -18,7 +18,7 @@ This is a living dossier of documented events, institutional links, and incentiv
 
 ⸻
 
-<!-- BEGIN 02-elite-civil-war.md -->
+<!-- BEGIN 01-elite-civil-war.md -->
 
 1.	Not one cabal: an elite civil war inside one machine
 
@@ -65,7 +65,7 @@ Trump’s economic line, and the Vance wing around him, is a break from that scr
 	•	Tariffs, onshoring incentives, and tighter immigration rules are an attempt to flip the incentive structure so that closing a plant in Ohio and opening one in Guangdong is punished instead of rewarded.
 	•	That puts the America First bloc not only against Davos and WEF, but also against the comfortable Wall Street model that treats the U.S. workforce as just another variable cost.
 
-<!-- END 02-elite-civil-war.md -->
+<!-- END 01-elite-civil-war.md -->
 
 ⸻
 
