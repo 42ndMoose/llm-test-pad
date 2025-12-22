@@ -176,6 +176,46 @@
     "url": "04-media-control-in-practice.html"
   },
   {
+    "id": "05-censorship-compliance-network",
+    "order": "000600",
+    "number": "5",
+    "level": 1,
+    "title": "The censorship / compliance network beyond ownership",
+    "keywords": [
+      "\"regulators\"",
+      "\"public broadcasters\"",
+      "\"Ofcom\"",
+      "\"Online Safety Act\"",
+      "\"BBC licence\"",
+      "\"Canada\"",
+      "\"CBC\"",
+      "\"CRTC\"",
+      "\"Bill C-11\"",
+      "\"Online Streaming Act\"",
+      "\"Trusted News Initiative\"",
+      "\"TNI\"",
+      "\"antitrust\"",
+      "\"DOJ Statement of Interest\"",
+      "\"Election Integrity Partnership\"",
+      "\"EIP\"",
+      "\"Virality Project\"",
+      "\"DFRLab\"",
+      "\"Atlantic Council\"",
+      "\"IFCN\"",
+      "\"Poynter\"",
+      "\"fact-checking\"",
+      "\"brand safety\"",
+      "\"GARM\"",
+      "\"WFA\""
+    ],
+    "summary": [
+      "\"Maps the regulation + NGO + advertiser + platform stack that standardizes what speech and narratives are treated as 'allowed.'\"",
+      "\"Frames this as a networked compliance regime rather than a single command center.\""
+    ],
+    "related": "[]",
+    "url": "05-censorship-compliance-network.html"
+  },
+  {
     "id": "10-main",
     "order": "999999",
     "number": "",
