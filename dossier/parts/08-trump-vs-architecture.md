@@ -263,9 +263,13 @@ So the same people who constantly warn that harsh words about journalists or jud
 
 8.8.3 National Guard shooting near the White House
 The logic does not stop at ICE. It now reaches the National Guard.
-	•	In late 2025, Nov 26, two West Virginia National Guardsmen on duty near the White House were shot in the face by a 29-year-old Afghan illegal immigrant, Rahmanullah Lakanwal.
+	•	Two West Virginia National Guardsmen on duty near the White House were shot in the face by a 29-year-old Afghan illegal immigrant, Rahmanullah Lakanwal.
 	•	One of the Guardsmen has been publicly identified as Andrew Wolfe. Initial reports described both victims as gravely wounded, with subsequent accounts reporting at least one fatality.
-	•   On Nov 26, 2025, National Guardsman Sarah Beckstrom was killed and National Guardsman Andrew Wolfe was seriously injured in what prosecutors described as an ambush-style shooting in Washington, D.C.; the suspect, Rahmanullah Lakanwal, later faced a federal complaint adding firearm-related counts tied to transporting (including a stolen) firearm across state lines, moving the case into U.S. District Court where capital punishment can be considered. [C]
+	•   National Guardsman Sarah Beckstrom was killed and National Guardsman Andrew Wolfe was seriously injured in what prosecutors described as an ambush-style shooting in Washington, D.C.; the suspect, Rahmanullah Lakanwal, later faced a federal complaint adding firearm-related counts tied to transporting (including a stolen) firearm across state lines, moving the case into U.S. District Court where capital punishment can be considered. [C]
+DATE: 2025-11-26
+TITLE: Ambush-style shooting of National Guardsmen near Farragut West Metro (Washington, D.C.)
+TAGS: national-guard, washington-dc, firearms, immigration, doj, usao-dc, interstate-transport, stolen-firearm
+NOTE: DOJ says Beckstrom died 2025-11-27; federal complaint and added firearm-transport counts announced 2025-12-24.
 Evidence:
 - https://www.justice.gov/usao-dc/pr/afghan-national-charged-murder-national-guard-soldier-sarah-beckstrom
 - https://www.justice.gov/usao-dc/pr/new-federal-charges-killing-national-guardsman-sarah-beckstrom-and-shooting-guardsman
