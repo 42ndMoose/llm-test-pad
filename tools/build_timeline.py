@@ -81,8 +81,7 @@ def render_html(events: list[dict]) -> str:
         "<body>",
         "<nav>"
         '  <a href="./index.html">Index</a> | '
-        '  <a href="./claims.html">Claims</a> | '
-        '  <a href="./timeline.html">Timeline</a>'
+        '  <a href="./claims.html">Claims</a>'
         "</nav>",
         "<main>",
         "<h1>Timeline</h1>",
