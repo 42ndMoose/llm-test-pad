@@ -19,6 +19,7 @@ def build_events(claims: list[dict]) -> list[dict]:
         title = (c.get("title") or "").strip()
         if not date:
             continue  # only timeline claims
+
         if not title:
             # fallback: use shortened claim text
             txt = " ".join((c.get("text") or "").split())
@@ -89,14 +90,19 @@ def render_html(events: list[dict]) -> str:
                 ) + "</div>"
 
             sec_url = e.get("section_url") or ""
-            sec_text = (e.get("section_label") or "").strip() or "Section"
+            sec_label = (e.get("section_label") or "").strip()
+            sec_label_html = f" <span style='opacity:.7'>({escape(sec_label)})</span>" if sec_label else ""
+
+            section_link_html = ""
+            if sec_url:
+                section_link_html = f" | <a href='./{escape(sec_url)}'>Section</a>{sec_label_html}"
 
             out.append(
                 "<li>"
                 f"<strong>{escape(e['title'])}</strong>{tags_html}"
                 f"<div><a href='./{escape(e['claim_url'])}'>Claim {escape(e['id'])}</a>"
-                + (f" | <a href='./{escape(sec_url)}'>{escape(sec_text)}</a>" if sec_url else "")
-                + "</div>"
+                f"{section_link_html}"
+                "</div>"
                 f"{note_html}"
                 f"{links_html}"
                 "</li>"
