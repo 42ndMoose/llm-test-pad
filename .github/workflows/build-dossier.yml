@@ -47,6 +47,10 @@ jobs:
         run: |
           python tools/build_claims.py dossier/source.md dossier/site
 
+      - name: Build timeline
+        run: |
+          python tools/build_timeline.py dossier/site
+
       - name: Build source.html (clean human view)
         run: |
           python tools/build_source_html.py dossier/source.md dossier/site/source.html
