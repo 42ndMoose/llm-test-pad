@@ -2,7 +2,7 @@
   {
     "id": "C-02-ownership-layer-001",
     "text": "BlackRock, Vanguard, and State Street are commonly referred to as the “Big Three” (or “Giant Three”) in the context of index-fund and institutional ownership concentration.",
-    "evidence": "Evidence:\n- https://corpgov.law.harvard.edu/2019/06/14/the-big-three-power-and-why-it-matters/",
+    "evidence": "- https://corpgov.law.harvard.edu/2019/06/14/the-big-three-power-and-why-it-matters/",
     "evidence_count": 1,
     "links": [
       "https://corpgov.law.harvard.edu/2019/06/14/the-big-three-power-and-why-it-matters/"
@@ -10,7 +10,12 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 114
+    "line": 114,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-002",
@@ -25,12 +30,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 118
+    "line": 118,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-003",
     "text": "For Comcast (CMCSA), you can verify major holders through its proxy “beneficial ownership” table and through SC 13G filings on SEC EDGAR.",
-    "evidence": "Evidence:\n- Comcast SEC EDGAR company page (CIK 0001166691): https://www.sec.gov/edgar/browse/?CIK=1166691\n- Comcast proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1166691&type=DEF%2014A&count=40&owner=exclude\n- Comcast SC 13G filings (institutional holders): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1166691&type=SC%2013G&count=40&owner=exclude",
+    "evidence": "- Comcast SEC EDGAR company page (CIK 0001166691): https://www.sec.gov/edgar/browse/?CIK=1166691\n- Comcast proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1166691&type=DEF%2014A&count=40&owner=exclude\n- Comcast SC 13G filings (institutional holders): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1166691&type=SC%2013G&count=40&owner=exclude",
     "evidence_count": 3,
     "links": [
       "https://www.sec.gov/edgar/browse/?CIK=1166691",
@@ -40,12 +50,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 133
+    "line": 133,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-004",
     "text": "For Disney (DIS), you can verify major holders through its proxy “beneficial ownership” table and through SC 13G filings on SEC EDGAR.",
-    "evidence": "Evidence:\n- The Walt Disney Company SEC EDGAR company page (CIK 0001744489): https://www.sec.gov/edgar/browse/?CIK=1744489\n- Disney proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=DEF%2014A&count=40&owner=exclude\n- Disney SC 13G filings (institutional holders): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=SC%2013G&count=40&owner=exclude",
+    "evidence": "- The Walt Disney Company SEC EDGAR company page (CIK 0001744489): https://www.sec.gov/edgar/browse/?CIK=1744489\n- Disney proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=DEF%2014A&count=40&owner=exclude\n- Disney SC 13G filings (institutional holders): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=SC%2013G&count=40&owner=exclude",
     "evidence_count": 3,
     "links": [
       "https://www.sec.gov/edgar/browse/?CIK=1744489",
@@ -55,12 +70,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 146
+    "line": 146,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-005",
     "text": "If you want a clean “combined %” number for Disney (Vanguard + BlackRock + State Street), compute it from the latest proxy beneficial owners table (and confirm with SC 13G filings if needed).",
-    "evidence": "Evidence:\n- Disney proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=DEF%2014A&count=40&owner=exclude\n- Disney SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=SC%2013G&count=40&owner=exclude",
+    "evidence": "- Disney proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=DEF%2014A&count=40&owner=exclude\n- Disney SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=SC%2013G&count=40&owner=exclude",
     "evidence_count": 2,
     "links": [
       "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1744489&type=DEF%2014A&count=40&owner=exclude",
@@ -69,12 +89,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 152
+    "line": 152,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-006",
     "text": "For Warner Bros. Discovery (WBD), you can verify major holders through its proxy beneficial ownership table and through SC 13G filings on SEC EDGAR.",
-    "evidence": "Evidence:\n- WBD SEC EDGAR company page (CIK 0001437107): https://www.sec.gov/edgar/browse/?CIK=1437107\n- WBD proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1437107&type=DEF%2014A&count=40&owner=exclude\n- WBD SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1437107&type=SC%2013G&count=40&owner=exclude",
+    "evidence": "- WBD SEC EDGAR company page (CIK 0001437107): https://www.sec.gov/edgar/browse/?CIK=1437107\n- WBD proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1437107&type=DEF%2014A&count=40&owner=exclude\n- WBD SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1437107&type=SC%2013G&count=40&owner=exclude",
     "evidence_count": 3,
     "links": [
       "https://www.sec.gov/edgar/browse/?CIK=1437107",
@@ -84,12 +109,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 161
+    "line": 161,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-007",
     "text": "Fox Corporation’s voting control structure can be verified in its proxy statement / annual filing disclosures on SEC EDGAR.",
-    "evidence": "Evidence:\n- Fox SEC EDGAR company page (CIK 0001754301): https://www.sec.gov/edgar/browse/?CIK=1754301\n- Fox proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude",
+    "evidence": "- Fox SEC EDGAR company page (CIK 0001754301): https://www.sec.gov/edgar/browse/?CIK=1754301\n- Fox proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude",
     "evidence_count": 2,
     "links": [
       "https://www.sec.gov/edgar/browse/?CIK=1754301",
@@ -98,12 +128,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 171
+    "line": 171,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-008",
     "text": "For Fox’s traded shares, large institutions (including Big Three firms) can be checked through Fox’s proxy beneficial owners table and through SC 13G filings on SEC EDGAR.",
-    "evidence": "Evidence:\n- Fox SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=SC%2013G&count=40&owner=exclude\n- Fox proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude",
+    "evidence": "- Fox SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=SC%2013G&count=40&owner=exclude\n- Fox proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude",
     "evidence_count": 2,
     "links": [
       "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=SC%2013G&count=40&owner=exclude",
@@ -112,12 +147,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 176
+    "line": 176,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-009",
     "text": "Sinclair’s ownership / voting control disclosures can be verified through its proxy statement on SEC EDGAR.",
-    "evidence": "Evidence:\n- Sinclair SEC EDGAR company page (CIK 0000912752): https://www.sec.gov/edgar/browse/?CIK=912752\n- Example Sinclair proxy statement (SEC-hosted): https://www.sec.gov/Archives/edgar/data/912752/000091275221000031/proxystmt-def2020def14a.htm\n- Sinclair proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=DEF%2014A&count=40&owner=exclude",
+    "evidence": "- Sinclair SEC EDGAR company page (CIK 0000912752): https://www.sec.gov/edgar/browse/?CIK=912752\n- Example Sinclair proxy statement (SEC-hosted): https://www.sec.gov/Archives/edgar/data/912752/000091275221000031/proxystmt-def2020def14a.htm\n- Sinclair proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=DEF%2014A&count=40&owner=exclude",
     "evidence_count": 3,
     "links": [
       "https://www.sec.gov/edgar/browse/?CIK=912752",
@@ -127,12 +167,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 186
+    "line": 186,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-010",
     "text": "Sinclair major institutional holders can be checked via its proxy beneficial owners table and via SC 13G filings on SEC EDGAR.",
-    "evidence": "Evidence:\n- Sinclair SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=SC%2013G&count=40&owner=exclude\n- Sinclair proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=DEF%2014A&count=40&owner=exclude",
+    "evidence": "- Sinclair SC 13G filings: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=SC%2013G&count=40&owner=exclude\n- Sinclair proxies (DEF 14A listing): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=DEF%2014A&count=40&owner=exclude",
     "evidence_count": 2,
     "links": [
       "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=912752&type=SC%2013G&count=40&owner=exclude",
@@ -141,7 +186,12 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 192
+    "line": 192,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-011",
@@ -161,12 +211,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 199
+    "line": 199,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-02-ownership-layer-012",
     "text": "Dual-class or controlled-company structures can let insiders retain voting control even when large institutional investors hold significant economic ownership.",
-    "evidence": "Evidence:\n- Fox proxies (control disclosures): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude\n- Example Sinclair proxy statement (controlled company / voting power): https://www.sec.gov/Archives/edgar/data/912752/000091275221000031/proxystmt-def2020def14a.htm\n- Ownership vs control context: https://corpgov.law.harvard.edu/2019/06/14/the-big-three-power-and-why-it-matters/",
+    "evidence": "- Fox proxies (control disclosures): https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude\n- Example Sinclair proxy statement (controlled company / voting power): https://www.sec.gov/Archives/edgar/data/912752/000091275221000031/proxystmt-def2020def14a.htm\n- Ownership vs control context: https://corpgov.law.harvard.edu/2019/06/14/the-big-three-power-and-why-it-matters/",
     "evidence_count": 3,
     "links": [
       "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1754301&type=DEF%2014A&count=40&owner=exclude",
@@ -176,12 +231,17 @@
     "section_id": "02-ownership-layer",
     "section_label": "2. Ownership layer: Big Three and legacy media",
     "url": "02-ownership-layer.html",
-    "line": 212
+    "line": 212,
+    "date": "",
+    "date_raw": "",
+    "title": "",
+    "tags": [],
+    "note": ""
   },
   {
     "id": "C-08-trump-vs-architecture-001",
     "text": "•   National Guardsman Sarah Beckstrom was killed and National Guardsman Andrew Wolfe was seriously injured in what prosecutors described as an ambush-style shooting in Washington, D.C.; the suspect, Rahmanullah Lakanwal, later faced a federal complaint adding firearm-related counts tied to transporting (including a stolen) firearm across state lines, moving the case into U.S. District Court where capital punishment can be considered.",
-    "evidence": "DATE: 2025-11-26\nTITLE: Ambush-style shooting of National Guardsmen near Farragut West Metro (Washington, D.C.)\nTAGS: national-guard, washington-dc, firearms, immigration, doj\nNOTE: DOJ says Beckstrom died 2025-11-27; added charges announced 2025-12-24.\n- https://www.justice.gov/usao-dc/pr/afghan-national-charged-murder-national-guard-soldier-sarah-beckstrom\n- https://www.justice.gov/usao-dc/pr/new-federal-charges-killing-national-guardsman-sarah-beckstrom-and-shooting-guardsman",
+    "evidence": "- https://www.justice.gov/usao-dc/pr/afghan-national-charged-murder-national-guard-soldier-sarah-beckstrom\n- https://www.justice.gov/usao-dc/pr/new-federal-charges-killing-national-guardsman-sarah-beckstrom-and-shooting-guardsman",
     "evidence_count": 2,
     "links": [
       "https://www.justice.gov/usao-dc/pr/afghan-national-charged-murder-national-guard-soldier-sarah-beckstrom",
@@ -190,6 +250,17 @@
     "section_id": "08-trump-vs-architecture",
     "section_label": "8. Trump 2.0 vs that architecture",
     "url": "08-trump-vs-architecture.html",
-    "line": 727
+    "line": 727,
+    "date": "2025-11-26",
+    "date_raw": "",
+    "title": "Ambush-style shooting of National Guardsmen near Farragut West Metro (Washington, D.C.)",
+    "tags": [
+      "national-guard",
+      "washington-dc",
+      "firearms",
+      "immigration",
+      "doj"
+    ],
+    "note": "DOJ says Beckstrom died 2025-11-27; added charges announced 2025-12-24."
   }
 ]
