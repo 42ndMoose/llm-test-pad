@@ -33,6 +33,7 @@ def build_events(claims: list[dict]) -> list[dict]:
                 "tags": c.get("tags", []),
                 "note": c.get("note", ""),
                 "section_url": c.get("url", ""),
+                "section_label": c.get("section_label", ""),
                 "claim_url": f"claims.html#{c['id']}",
                 "links": c.get("links", []),
             }
@@ -76,8 +77,10 @@ def render_html(events: list[dict]) -> str:
         for e in by_day[d]:
             tags = ", ".join(e.get("tags") or [])
             tags_html = f" <span style='opacity:.7'>[{escape(tags)}]</span>" if tags else ""
+
             note = e.get("note") or ""
             note_html = f"<div style='opacity:.8;margin-top:4px'>{escape(note)}</div>" if note else ""
+
             links = e.get("links") or []
             links_html = ""
             if links:
@@ -85,11 +88,14 @@ def render_html(events: list[dict]) -> str:
                     [f'<a href="{escape(u)}" rel="noreferrer noopener">{escape(u)}</a>' for u in links]
                 ) + "</div>"
 
+            sec_url = e.get("section_url") or ""
+            sec_text = (e.get("section_label") or "").strip() or "Section"
+
             out.append(
                 "<li>"
                 f"<strong>{escape(e['title'])}</strong>{tags_html}"
                 f"<div><a href='./{escape(e['claim_url'])}'>Claim {escape(e['id'])}</a>"
-                + (f" | <a href='./{escape(e['section_url'])}'>Section</a>" if e.get("section_url") else "")
+                + (f" | <a href='./{escape(sec_url)}'>{escape(sec_text)}</a>" if sec_url else "")
                 + "</div>"
                 f"{note_html}"
                 f"{links_html}"
