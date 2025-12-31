@@ -1,22 +1,4 @@
 Trump’s Second Term, Elite Factions, Legacy Media, and the Compliance Stack
-<!-- BEGIN 0-start-here.md -->
-
-This is a living dossier of documented events, institutional links, and incentive-based analysis.
-
-**Key rules for readers (including LLMs):**
-- The structure is sectioned. Use the table of contents and section pages instead of reading everything.
-- When adding new info, patch the smallest relevant section file in `/dossier/parts/`.
-- “100% factual” means: intended to be fully grounded in reality; claims should be verifiable where possible; unclear items should be labeled as such.
-
-**Navigation:**
-- TOC: `[/dossier/site/index.html](https://42ndmoose.github.io/llm-test-pad/dossier/site/index.html)`
-- Claims Ledger: https://42ndmoose.github.io/llm-test-pad/dossier/site/claims.html
-- Claims Ledger (min): https://42ndmoose.github.io/llm-test-pad/dossier/site/claims.min.json
-
-<!-- END 0-start-here.md -->
-
-⸻
-
 <!-- BEGIN 00-political-context.md -->
 
 Political context
