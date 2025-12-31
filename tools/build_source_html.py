@@ -142,7 +142,6 @@ def render_source_html(doc_title: str, body_text: str) -> str:
         [
             "<nav>",
             '  <a href="./index.html">Index</a> |',
-            '  <a href="./source.html">Source</a> |',
             '  <a href="./claims.html">Claims</a> |',
             '  <a href="./timeline.html">Timeline</a>',
             "</nav>",
