@@ -12,6 +12,7 @@ summary:
   - "Landing page for humans and LLMs."
   - "Explains how to navigate and how to interpret sections."
 related: []
+exclude_from_source: true
 ---
 
 This is a living dossier of documented events, institutional links, and incentive-based analysis.
