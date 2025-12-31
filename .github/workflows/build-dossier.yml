@@ -25,6 +25,10 @@ jobs:
         run: |
           python tools/build_source.py
 
+      - name: Build source.html (clean human view)
+        run: |
+          python tools/build_source_html.py dossier/source.md dossier/site/source.html
+
       - name: Clean output folder (keep assets)
         run: |
           set -euo pipefail
