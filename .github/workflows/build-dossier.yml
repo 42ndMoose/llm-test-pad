@@ -36,6 +36,7 @@ jobs:
           # but KEEP anything inside dossier/site/assets/
           find dossier/site -type f \( -name "*.html" -o -name "*.json" \) \
             ! -path "dossier/site/assets/*" \
+            ! -path "dossier/site/source.html" \
             -delete
 
       - name: Split dossier into pages
