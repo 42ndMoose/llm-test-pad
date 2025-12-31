@@ -138,6 +138,17 @@ def strip_claims(text: str) -> str:
 
 
 def render_source_html(doc_title: str, body_text: str) -> str:
+    nav = "\n".join(
+        [
+            "<nav>",
+            '  <a href="./index.html">Index</a> |',
+            '  <a href="./source.html">Source</a> |',
+            '  <a href="./claims.html">Claims</a> |',
+            '  <a href="./timeline.html">Timeline</a>',
+            "</nav>",
+        ]
+    )
+
     return "\n".join(
         [
             "<!doctype html>",
@@ -148,7 +159,7 @@ def render_source_html(doc_title: str, body_text: str) -> str:
             f"<title>{escape(doc_title)} - Source</title>",
             "</head>",
             "<body>",
-            '<nav><a href="./index.html">Index</a> | <a href="./claims.html">Claims</a></nav>',
+            nav,
             "<main>",
             f"<h1>{escape(doc_title)} (Source)</h1>",
             "<p>Built from <code>dossier/source.md</code>. Claim evidence blocks are hidden for human reading.</p>",
