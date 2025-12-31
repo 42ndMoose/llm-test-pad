@@ -320,7 +320,6 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
 <body>
   <nav>
     <a href="./index.html">Index</a> |
-    <a href="./claims.html">Claims</a> |
     <a href="./timeline.html">Timeline</a>
   </nav>
   <main>
