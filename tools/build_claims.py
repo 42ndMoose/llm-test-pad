@@ -32,6 +32,14 @@ C_SUFFIX_RE = re.compile(r"^\s*(.+?)\s*\[c\]\s*$", re.IGNORECASE)
 
 URL_RE = re.compile(r"https?://[^\s)>\]]+")
 
+# Event metadata inside evidence blocks (timeline-ready)
+META_LINE_RE = re.compile(r"^\s*(date|title|tags|note)\s*:\s*(.+?)\s*$", re.IGNORECASE)
+EVIDENCE_LABEL_RE = re.compile(
+    r"^\s*(evidence|links|sources|verification paths?|verify|citations)\s*:?\s*(?:\(.*\))?\s*$",
+    re.IGNORECASE,
+)
+ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
 
 def _strip_wrapping_quotes(s: str) -> str:
     s = s.strip()
@@ -186,16 +194,69 @@ def _unique_urls(text: str) -> list[str]:
     return out
 
 
+def parse_event_meta(evidence_text: str) -> tuple[dict, str]:
+    """
+    Pull DATE/TITLE/TAGS/NOTE from an evidence block.
+    Returns (meta, cleaned_evidence_text).
+
+    Rules:
+      - DATE should be ISO YYYY-MM-DD for deterministic sorting.
+      - TAGS is comma-separated.
+      - NOTE is optional.
+      - Evidence:/Sources:/Links: labels are ignored (kept out of cleaned evidence).
+    """
+    meta: dict = {}
+    cleaned: list[str] = []
+    tags: list[str] = []
+
+    for raw in (evidence_text or "").splitlines():
+        line = raw.rstrip()
+
+        m = META_LINE_RE.match(line)
+        if m:
+            k = m.group(1).lower()
+            v = m.group(2).strip()
+
+            if k == "date":
+                if ISO_DATE_RE.match(v):
+                    meta["date"] = v
+                else:
+                    meta["date_raw"] = v  # keep if someone writes "Nov 26"
+            elif k == "title":
+                meta["title"] = v
+            elif k == "tags":
+                tags = [t.strip() for t in v.split(",") if t.strip()]
+                meta["tags"] = tags
+            elif k == "note":
+                meta["note"] = v
+            continue
+
+        if EVIDENCE_LABEL_RE.match(line):
+            continue
+
+        cleaned.append(line)
+
+    return meta, "\n".join(cleaned).strip()
+
+
 def render_claims_html(doc_title: str, claims: list[dict]) -> str:
     rows: list[str] = []
 
     for c in claims:
-        cid = escape(c["id"])
+        cid_raw = c["id"]
+        cid = escape(cid_raw)
         txt = escape(c["text"])
         sec_label = escape(c.get("section_label", ""))
         url = escape(c.get("url", ""))
         line = c.get("line", None)
         evc = int(c.get("evidence_count", 0))
+
+        # Timeline fields (optional)
+        date = escape((c.get("date") or c.get("date_raw") or "").strip())
+        title = escape((c.get("title") or "").strip())
+        tags = c.get("tags") or []
+        tags_str = escape(", ".join(tags)) if tags else ""
+        note = escape((c.get("note") or "").strip())
 
         where = sec_label
         if url:
@@ -210,13 +271,20 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
                 [f'<a href="{escape(u)}" rel="noreferrer noopener">{escape(u)}</a>' for u in links]
             )
 
+        # Claim ID is linkable (anchor + link)
+        id_cell = f"<a href='./claims.html#{cid}'>{cid}</a>"
+
         rows.append(
-            "<tr>"
-            f"<td style='white-space:nowrap'>{cid}</td>"
+            f"<tr id='{cid}'>"
+            f"<td style='white-space:nowrap'>{id_cell}</td>"
             f"<td>{txt}</td>"
             f"<td style='white-space:nowrap'>{where}</td>"
             f"<td style='text-align:right;white-space:nowrap'>{evc}</td>"
             f"<td>{links_html}</td>"
+            f"<td style='white-space:nowrap'>{date}</td>"
+            f"<td>{title}</td>"
+            f"<td>{tags_str}</td>"
+            f"<td>{note}</td>"
             "</tr>"
         )
 
@@ -225,6 +293,7 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
             "<table border='1' cellspacing='0' cellpadding='6' style='border-collapse:collapse;width:100%'>"
             "<thead><tr>"
             "<th>ID</th><th>Claim</th><th>Section</th><th>Evidence</th><th>Links</th>"
+            "<th>Date</th><th>Title</th><th>Tags</th><th>Note</th>"
             "</tr></thead>"
             "<tbody>"
             + "\n".join(rows)
@@ -235,17 +304,21 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
             "<p>No claims found yet.</p>"
             "<p>Supported formats:</p>"
             "<pre>"
-            "Some claim text. [C]\n"
-            "Evidence:\n"
-            "- https://...\n"
-            "\n"
-            "[CLAIM]\n"
-            "Claim text...\n"
-            "Evidence:\n"
-            "- https://...\n"
-            "[/CLAIM]\n"
-            "\n"
-            "CLAIM: Single line claim...\n"
+            "Some claim text. [C]\\n"
+            "DATE: 2025-11-26\\n"
+            "TITLE: Short event title\\n"
+            "TAGS: tag1, tag2\\n"
+            "NOTE: optional nuance/update\\n"
+            "Evidence:\\n"
+            "- https://...\\n"
+            "\\n"
+            "[CLAIM]\\n"
+            "Claim text...\\n"
+            "Evidence:\\n"
+            "- https://...\\n"
+            "[/CLAIM]\\n"
+            "\\n"
+            "CLAIM: Single line claim...\\n"
             "</pre>"
         )
 
@@ -257,7 +330,7 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
   <title>{escape(doc_title)} - Claims Ledger</title>
 </head>
 <body>
-  <nav><a href="./index.html">Index</a></nav>
+  <nav><a href="./index.html">Index</a> | <a href="./source.html">Source</a> | <a href="./claims.html">Claims</a></nav>
   <main>
     <h1>Claims Ledger</h1>
     <p>Claims are extracted from:</p>
@@ -266,6 +339,11 @@ def render_claims_html(doc_title: str, claims: list[dict]) -> str:
       <li><code>[CLAIM] ... [/CLAIM]</code> blocks</li>
       <li><code>CLAIM:</code> single lines</li>
     </ul>
+    <p>Optional timeline metadata inside an evidence block:</p>
+    <pre>DATE: YYYY-MM-DD
+TITLE: ...
+TAGS: tag1, tag2
+NOTE: ...</pre>
     <ul>
       <li><a href="./claims.json">claims.json</a></li>
       <li><a href="./claims.min.json">claims.min.json</a></li>
@@ -295,7 +373,6 @@ def main(src: str, outdir: str) -> None:
     claims_min: list[dict] = []
     section_counts: dict[str, int] = {}
 
-    current_part_name: str | None = None
     current_part_meta: dict | None = None
 
     def push_claim(
@@ -312,30 +389,38 @@ def main(src: str, outdir: str) -> None:
         section_counts[sec_id] += 1
         cid = claim_id(sec_id, section_counts[sec_id])
 
-        links = _unique_urls(evidence_text if evidence_text else claim_text)
+        event_meta, cleaned_evidence = parse_event_meta(evidence_text)
+        links = _unique_urls(cleaned_evidence if cleaned_evidence else claim_text)
         evidence_count = len(links)
 
         claims.append(
             {
                 "id": cid,
                 "text": claim_text.strip(),
-                "evidence": evidence_text.strip(),
+                "evidence": cleaned_evidence.strip(),
                 "evidence_count": evidence_count,
                 "links": links,
                 "section_id": sec_id,
                 "section_label": sec_label,
                 "url": url,
                 "line": line_no,
+                "date": event_meta.get("date", ""),
+                "date_raw": event_meta.get("date_raw", ""),
+                "title": event_meta.get("title", ""),
+                "tags": event_meta.get("tags", []),
+                "note": event_meta.get("note", ""),
             }
         )
 
-        # no-links skim: no evidence URLs, only count
         claims_min.append(
             {
                 "id": cid,
-                "u": url,                       # section page url
+                "u": url,
                 "t": " ".join(claim_text.split()),
                 "ec": evidence_count,
+                "d": event_meta.get("date", ""),
+                "ti": event_meta.get("title", ""),
+                "tg": event_meta.get("tags", []),
             }
         )
 
@@ -364,7 +449,6 @@ def main(src: str, outdir: str) -> None:
             claim_text = "\n".join(block_lines).strip()
             if claim_text:
                 # For blocks, evidence is inside the block, so keep it in evidence field too.
-                # This makes the ledger consistent.
                 push_claim(claim_text=claim_text, evidence_text=claim_text, line_no=start_line_no)
             continue
 
