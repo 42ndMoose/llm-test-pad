@@ -74,6 +74,11 @@ def norm_ws(s: str) -> str:
     return "\n".join(line.rstrip() for line in s.splitlines()).strip() + "\n"
 
 
+def truthy(v: object) -> bool:
+    s = str(v).strip().lower()
+    return s in {"true", "1", "yes", "y", "on"}
+
+
 def main() -> None:
     PARTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -87,6 +92,11 @@ def main() -> None:
         raw = p.read_text(encoding="utf-8")
 
         meta, body = parse_front_matter(raw)
+
+        # Allow excluding a part from the merged source.md
+        if truthy(meta.get("exclude_from_source", False)):
+            continue
+
         order = meta.get("order", "999999")
         title = meta.get("title", p.stem)
 
