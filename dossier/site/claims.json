@@ -239,6 +239,79 @@
     "note": ""
   },
   {
+    "id": "C-05-censorship-compliance-network-001",
+    "text": "TNI described publicly as coordinated partnership targeting election disinfo.",
+    "evidence": "- /dossier/site/assets/mirrors/2020-07-13-ebu-tni-election.html\n- https://www.ebu.ch/news/2020/07/trusted-news-initiative-steps-up-global-fight-against-disinformation-and-targets-us-presidential-election",
+    "evidence_count": 1,
+    "links": [
+      "https://www.ebu.ch/news/2020/07/trusted-news-initiative-steps-up-global-fight-against-disinformation-and-targets-us-presidential-election"
+    ],
+    "section_id": "05-censorship-compliance-network",
+    "section_label": "5. The censorship / compliance network beyond ownership",
+    "url": "05-censorship-compliance-network.html",
+    "line": 373,
+    "date": "2020-07-13",
+    "date_raw": "",
+    "title": "EBU: Trusted News Initiative steps up cooperation and targets the U.S. presidential election",
+    "tags": [
+      "tni",
+      "ebu",
+      "coordination",
+      "election",
+      "disinformation"
+    ],
+    "note": "Public-facing description of TNI as a major news + tech partnership built on cooperation."
+  },
+  {
+    "id": "C-05-censorship-compliance-network-002",
+    "text": "TNI pivot to vaccine disinfo (public description)",
+    "evidence": "- /dossier/site/assets/mirrors/2020-12-10-ebu-tni-vaccine.html\n- https://www.ebu.ch/news/2020/12/trusted-news-initiative-to-combat-spread-of-harmful-vaccine-disinformation",
+    "evidence_count": 1,
+    "links": [
+      "https://www.ebu.ch/news/2020/12/trusted-news-initiative-to-combat-spread-of-harmful-vaccine-disinformation"
+    ],
+    "section_id": "05-censorship-compliance-network",
+    "section_label": "5. The censorship / compliance network beyond ownership",
+    "url": "05-censorship-compliance-network.html",
+    "line": 381,
+    "date": "2020-12-10",
+    "date_raw": "",
+    "title": "EBU: TNI focuses on harmful vaccine disinformation following summit",
+    "tags": [
+      "tni",
+      "ebu",
+      "vaccines",
+      "disinformation",
+      "coordination"
+    ],
+    "note": "Public-facing description of TNI focus area expansion (vaccine disinformation)."
+  },
+  {
+    "id": "C-05-censorship-compliance-network-003",
+    "text": "DOJ Statement of Interest on alleged suppression of competition in “marketplace of ideas”",
+    "evidence": "- /dossier/site/assets/mirrors/2025-07-11-doj-opa-statement-of-interest.html\n- https://www.justice.gov/opa/pr/justice-department-files-statement-interest-suppression-competition-marketplace-ideas\n- /dossier/site/assets/mirrors/2025-07-11-doj-soi.pdf\n- https://www.justice.gov/atr/media/1407666/dl",
+    "evidence_count": 2,
+    "links": [
+      "https://www.justice.gov/opa/pr/justice-department-files-statement-interest-suppression-competition-marketplace-ideas",
+      "https://www.justice.gov/atr/media/1407666/dl"
+    ],
+    "section_id": "05-censorship-compliance-network",
+    "section_label": "5. The censorship / compliance network beyond ownership",
+    "url": "05-censorship-compliance-network.html",
+    "line": 389,
+    "date": "2025-07-11",
+    "date_raw": "",
+    "title": "DOJ files Statement of Interest arguing antitrust law can cover viewpoint collusion in news markets",
+    "tags": [
+      "doj",
+      "antitrust",
+      "viewpoint-collusion",
+      "tni",
+      "marketplace-of-ideas"
+    ],
+    "note": "DOJ says antitrust protects viewpoint competition; does not claim the lawsuit facts are proven."
+  },
+  {
     "id": "C-08-trump-vs-architecture-001",
     "text": "•   National Guardsman Sarah Beckstrom was killed and National Guardsman Andrew Wolfe was seriously injured in what prosecutors described as an ambush-style shooting in Washington, D.C.; the suspect, Rahmanullah Lakanwal, later faced a federal complaint adding firearm-related counts tied to transporting (including a stolen) firearm across state lines, moving the case into U.S. District Court where capital punishment can be considered.",
     "evidence": "- https://www.justice.gov/usao-dc/pr/afghan-national-charged-murder-national-guard-soldier-sarah-beckstrom\n- https://www.justice.gov/usao-dc/pr/new-federal-charges-killing-national-guardsman-sarah-beckstrom-and-shooting-guardsman",
@@ -250,7 +323,7 @@
     "section_id": "08-trump-vs-architecture",
     "section_label": "8. Trump 2.0 vs that architecture",
     "url": "08-trump-vs-architecture.html",
-    "line": 730,
+    "line": 756,
     "date": "2025-11-26",
     "date_raw": "",
     "title": "Ambush-style shooting of National Guardsmen near Farragut West Metro (Washington, D.C.)",

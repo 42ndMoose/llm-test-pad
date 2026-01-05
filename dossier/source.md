@@ -370,6 +370,32 @@ Trusted News Initiative (TNI)
 	•	In antitrust litigation, plaintiffs allege TNI members colluded to suppress rival outlets on major platforms.
 	•	A DOJ antitrust Statement of Interest has said antitrust law protects viewpoint competition and warned that exempting “viewpoint collusion” would let dominant outlets and platforms jointly block alternative perspectives. That extends Sherman Act logic into the “marketplace of ideas,” not just price or output.
 
+TNI described publicly as coordinated partnership targeting election disinfo. [C]
+DATE: 2020-07-13
+TITLE: EBU: Trusted News Initiative steps up cooperation and targets the U.S. presidential election
+TAGS: tni, ebu, coordination, election, disinformation
+NOTE: Public-facing description of TNI as a major news + tech partnership built on cooperation.
+- /dossier/site/assets/mirrors/2020-07-13-ebu-tni-election.html
+- https://www.ebu.ch/news/2020/07/trusted-news-initiative-steps-up-global-fight-against-disinformation-and-targets-us-presidential-election
+
+TNI pivot to vaccine disinfo (public description) [C]
+DATE: 2020-12-10
+TITLE: EBU: TNI focuses on harmful vaccine disinformation following summit
+TAGS: tni, ebu, vaccines, disinformation, coordination
+NOTE: Public-facing description of TNI focus area expansion (vaccine disinformation).
+- /dossier/site/assets/mirrors/2020-12-10-ebu-tni-vaccine.html
+- https://www.ebu.ch/news/2020/12/trusted-news-initiative-to-combat-spread-of-harmful-vaccine-disinformation
+
+DOJ Statement of Interest on alleged suppression of competition in “marketplace of ideas” [C]
+DATE: 2025-07-11
+TITLE: DOJ files Statement of Interest arguing antitrust law can cover viewpoint collusion in news markets
+TAGS: doj, antitrust, viewpoint-collusion, tni, marketplace-of-ideas
+NOTE: DOJ says antitrust protects viewpoint competition; does not claim the lawsuit facts are proven.
+- /dossier/site/assets/mirrors/2025-07-11-doj-opa-statement-of-interest.html
+- https://www.justice.gov/opa/pr/justice-department-files-statement-interest-suppression-competition-marketplace-ideas
+- /dossier/site/assets/mirrors/2025-07-11-doj-soi.pdf
+- https://www.justice.gov/atr/media/1407666/dl
+
 So even DOJ is now on record that coordinated “truth curation” by dominant players can raise antitrust issues.
 
 Election Integrity Partnership (EIP) / Virality Project

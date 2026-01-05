@@ -1,5 +1,72 @@
 [
   {
+    "date": "2020-07-13",
+    "title": "EBU: Trusted News Initiative steps up cooperation and targets the U.S. presidential election",
+    "id": "C-05-censorship-compliance-network-001",
+    "claim": "TNI described publicly as coordinated partnership targeting election disinfo.",
+    "tags": [
+      "tni",
+      "ebu",
+      "coordination",
+      "election",
+      "disinformation"
+    ],
+    "note": "Public-facing description of TNI as a major news + tech partnership built on cooperation.",
+    "section_url": "05-censorship-compliance-network.html",
+    "section_label": "5. The censorship / compliance network beyond ownership",
+    "section_num": "5",
+    "claim_url": "claims.html#C-05-censorship-compliance-network-001",
+    "claim_short": "C-05",
+    "links": [
+      "https://www.ebu.ch/news/2020/07/trusted-news-initiative-steps-up-global-fight-against-disinformation-and-targets-us-presidential-election"
+    ]
+  },
+  {
+    "date": "2020-12-10",
+    "title": "EBU: TNI focuses on harmful vaccine disinformation following summit",
+    "id": "C-05-censorship-compliance-network-002",
+    "claim": "TNI pivot to vaccine disinfo (public description)",
+    "tags": [
+      "tni",
+      "ebu",
+      "vaccines",
+      "disinformation",
+      "coordination"
+    ],
+    "note": "Public-facing description of TNI focus area expansion (vaccine disinformation).",
+    "section_url": "05-censorship-compliance-network.html",
+    "section_label": "5. The censorship / compliance network beyond ownership",
+    "section_num": "5",
+    "claim_url": "claims.html#C-05-censorship-compliance-network-002",
+    "claim_short": "C-05",
+    "links": [
+      "https://www.ebu.ch/news/2020/12/trusted-news-initiative-to-combat-spread-of-harmful-vaccine-disinformation"
+    ]
+  },
+  {
+    "date": "2025-07-11",
+    "title": "DOJ files Statement of Interest arguing antitrust law can cover viewpoint collusion in news markets",
+    "id": "C-05-censorship-compliance-network-003",
+    "claim": "DOJ Statement of Interest on alleged suppression of competition in “marketplace of ideas”",
+    "tags": [
+      "doj",
+      "antitrust",
+      "viewpoint-collusion",
+      "tni",
+      "marketplace-of-ideas"
+    ],
+    "note": "DOJ says antitrust protects viewpoint competition; does not claim the lawsuit facts are proven.",
+    "section_url": "05-censorship-compliance-network.html",
+    "section_label": "5. The censorship / compliance network beyond ownership",
+    "section_num": "5",
+    "claim_url": "claims.html#C-05-censorship-compliance-network-003",
+    "claim_short": "C-05",
+    "links": [
+      "https://www.justice.gov/opa/pr/justice-department-files-statement-interest-suppression-competition-marketplace-ideas",
+      "https://www.justice.gov/atr/media/1407666/dl"
+    ]
+  },
+  {
     "date": "2025-11-26",
     "title": "Ambush-style shooting of National Guardsmen near Farragut West Metro (Washington, D.C.)",
     "id": "C-08-trump-vs-architecture-001",
