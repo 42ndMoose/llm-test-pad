@@ -50,7 +50,7 @@ Reddit (big subs) and Twitch
 	•	Stealth-suppressed via rules about “harm,” “hate,” or “misinfo,”
 	•	Dogpiled while mods quietly lean one way.
 
-This does not need a giant conspiracy. You have a rule-set written in the same ideological language as NGOs, universities, and brand-safety frameworks. That tilts the Overton window by default.
+This does not need a giant conspiracy. You have a rule-set written in the same ideological language as NGOs, universities, and brand-safety frameworks. That creates asymmetrical enforcement by default: one direction of speech gets treated as higher-risk, so it gets throttled faster and harder.
 
 So: Wikipedia, big subreddits, and Twitch are not neutral ground. They sit inside the same “safety / misinfo / ESG / DEI” ecosystem, and anything taken from them needs to be filtered with that in mind.
 
